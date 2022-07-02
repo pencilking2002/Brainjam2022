@@ -1,0 +1,1 @@
+If you're importing the .unitypackage then you don't need the additional files, as the package file contains it all.
