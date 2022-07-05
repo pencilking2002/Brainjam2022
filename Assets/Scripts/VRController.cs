@@ -6,44 +6,21 @@ using UnityEngine.InputSystem;
 
 public class VRController : MonoBehaviour
 {
+    [SerializeField] private Canvas canvas;
     [SerializeField] private XROrigin origin;
     [SerializeField] private LookRaycaster raycaster;
-    [SerializeField] private InputActionAsset playerControls;
     public Waypoint currWaypoint;
-    InputAction interactAction;
-    InputAction valueTestAction;
 
     private void Awake()
     {
-        InitializeControls();
-    }
-
-    private void InitializeControls()
-    {
-        var map = playerControls.FindActionMap("Player");
-        interactAction = map.FindAction("Interact");
-        valueTestAction = map.FindAction("ValueTest");
-
-        interactAction.performed += OnInteract;
-        interactAction.Enable();
-
-        valueTestAction.performed += OnValueTestPress;
-        valueTestAction.Enable();
+        var localPos = canvas.transform.localPosition;
+        localPos.y = 0;
+        canvas.transform.localPosition = localPos;
     }
 
     private void Update()
     {
         raycaster.Raycast(this);
-    }
-
-    private void OnInteract(InputAction.CallbackContext context)
-    {
-        //Debug.Log("grip pressed");
-    }
-
-    private void OnValueTestPress(InputAction.CallbackContext context)
-    {
-        //Debug.Log("val: " + context.ReadValue<float>().ToString("F2"));
     }
 
     public void SetPlayerPosition(Transform spawnTransform)

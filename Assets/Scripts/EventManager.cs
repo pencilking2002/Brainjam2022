@@ -9,6 +9,10 @@ public class EventManager : MonoBehaviour
     {
         public static Action<Waypoint> onWaypointFillStart;
         public static Action<Waypoint> onWaypointFilled;
+    }
 
+    public class Input
+    {
+        public static Action onPressConfirm;
     }
 }
