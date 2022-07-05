@@ -59,11 +59,10 @@ public class VRController : MonoBehaviour
         SetPlayerPosition(waypoint.transform);
 
         if (currWaypoint && currWaypoint != waypoint)
-        {
-            currWaypoint.SetInteractable(true);
-        }
+            currWaypoint.SetIdle();
+
         currWaypoint = waypoint;
-        currWaypoint.SetInteractable(false);
+        currWaypoint.SetNone();
     }
 
     private void OnEnable()

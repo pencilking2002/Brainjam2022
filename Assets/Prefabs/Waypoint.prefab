@@ -133,6 +133,7 @@ MonoBehaviour:
   defaultColor: {r: 0.17075986, g: 0.78653026, b: 1.0193846, a: 0}
   highlightColor: {r: 2.0104709, g: 6.408376, b: 7.999999, a: 0}
   cylinderRend: {fileID: 3074649003626579710}
+  outerCircle: {fileID: 3074649004468633165}
   loadingCircle: {fileID: 3074649004909859305}
   col: {fileID: 5464857108201151031}
   fillState: 0
@@ -150,7 +151,7 @@ GameObject:
   - component: {fileID: 3074649004468633166}
   - component: {fileID: 3074649004468633165}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: OuterCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

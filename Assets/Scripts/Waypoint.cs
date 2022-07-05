@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public enum FillState
 {
+    NONE,
     IDLE,
     FILLING,
-    FILLED
+    FILLED,
 }
 
 public class Waypoint : MonoBehaviour
@@ -19,6 +20,7 @@ public class Waypoint : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Renderer cylinderRend;
+    [SerializeField] private Image outerCircle;
     [SerializeField] private Image loadingCircle;
     [SerializeField] private Collider col;
 
@@ -32,6 +34,12 @@ public class Waypoint : MonoBehaviour
     private void Awake()
     {
         cylinderMat = cylinderRend.material;
+        if (IsNone())
+        {
+            Debug.Log("set none");
+            SetNone();
+        }
+
     }
 
     public void OnUpdate()
@@ -61,20 +69,24 @@ public class Waypoint : MonoBehaviour
         cylinderRend.transform.localScale = scale;
     }
 
-    public void SetInteractable(bool isInteractable)
+    private void Activate(bool activate)
     {
-        col.enabled = isInteractable;
-
-        if (!isInteractable)
-            ScaleCylinder(0);
+        ScaleCylinder(0);
+        col.enabled = activate;
+        cylinderRend.enabled = activate;
+        loadingCircle.enabled = activate;
+        outerCircle.enabled = activate;
     }
 
+    public bool IsNone() { return fillState == FillState.NONE; }
     public bool IsIdle() { return fillState == FillState.IDLE; }
     public bool IsFilling() { return fillState == FillState.FILLING; }
     public bool IsFilled() { return fillState == FillState.FILLED; }
 
     public void SetIdle()
     {
+        Activate(true);
+        col.enabled = true;
         LeanTween.cancel(gameObject);
         LeanTween.value(gameObject, loadingCircle.fillAmount, 0, 0.25f).setOnUpdate((float val) =>
         {
@@ -92,5 +104,10 @@ public class Waypoint : MonoBehaviour
         fillState = FillState.FILLING;
     }
     public void SetFilled() { fillState = FillState.FILLED; }
+    public void SetNone()
+    {
+        fillState = FillState.NONE;
+        Activate(false);
+    }
 
 }
