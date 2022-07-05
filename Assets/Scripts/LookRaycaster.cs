@@ -35,7 +35,9 @@ public class LookRaycaster : MonoBehaviour
         {
             if (GameManager.Instance.waypointManager.HasWaypoint())
             {
-                GameManager.Instance.waypointManager.GetCurrWaypoint().SetIdle();
+                if (controller.currWaypoint != GameManager.Instance.waypointManager.GetCurrWaypoint())
+                    GameManager.Instance.waypointManager.GetCurrWaypoint().SetIdle();
+
                 GameManager.Instance.waypointManager.SetCurrWaypoint(null);
             }
         }

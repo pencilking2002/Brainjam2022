@@ -62,7 +62,6 @@ public class VRController : MonoBehaviour
             currWaypoint.SetIdle();
 
         currWaypoint = waypoint;
-        currWaypoint.SetNone();
     }
 
     private void OnEnable()

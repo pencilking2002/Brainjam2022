@@ -51,7 +51,7 @@ public class Waypoint : MonoBehaviour
 
             if (loadingCircle.fillAmount >= 1.0f)
             {
-                SetFilled();
+                SetNone();
                 EventManager.Player.onWaypointFilled?.Invoke(this);
             }
         }
