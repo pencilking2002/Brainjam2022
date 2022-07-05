@@ -20,6 +20,7 @@ public class Waypoint : MonoBehaviour
     [Header("References")]
     [SerializeField] private Renderer cylinderRend;
     [SerializeField] private Image loadingCircle;
+    [SerializeField] private Collider col;
 
 
     [Header("Settings")]
@@ -58,6 +59,14 @@ public class Waypoint : MonoBehaviour
         var scale = cylinderRend.transform.localScale;
         scale.y = Mathf.Lerp(minMaxCylinderScaleY.x, minMaxCylinderScaleY.y, t);
         cylinderRend.transform.localScale = scale;
+    }
+
+    public void SetInteractable(bool isInteractable)
+    {
+        col.enabled = isInteractable;
+
+        if (!isInteractable)
+            ScaleCylinder(0);
     }
 
     public bool IsIdle() { return fillState == FillState.IDLE; }

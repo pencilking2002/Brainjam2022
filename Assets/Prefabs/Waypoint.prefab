@@ -134,9 +134,10 @@ MonoBehaviour:
   highlightColor: {r: 2.0104709, g: 6.408376, b: 7.999999, a: 0}
   cylinderRend: {fileID: 3074649003626579710}
   loadingCircle: {fileID: 3074649004909859305}
+  col: {fileID: 5464857108201151031}
   fillState: 0
-  fillSpeed: 0.5
-  minMaxCylinderScaleY: {x: 0.25, y: 1}
+  fillSpeed: 1
+  minMaxCylinderScaleY: {x: 0.25, y: 0.75}
 --- !u!1 &3074649004468633155
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +405,7 @@ GameObject:
   - component: {fileID: 98801007398126274}
   - component: {fileID: 5464857108201151031}
   m_Layer: 7
-  m_Name: Cylinder
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +484,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7742715041011408624}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2

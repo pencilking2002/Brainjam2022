@@ -8,8 +8,6 @@ public class LookRaycaster : MonoBehaviour
     [SerializeField] private XROrigin origin;
     [SerializeField] private float maxLookDistance = 10;
     [SerializeField] private LayerMask layerMask;
-    //[SerializeField] private bool hasWaypoint;
-    //[SerializeField] private Waypoint waypoint;
 
 
     public void Raycast(VRController controller)
