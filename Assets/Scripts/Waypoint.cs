@@ -102,7 +102,9 @@ public class Waypoint : MonoBehaviour
         LeanTween.cancel(gameObject);
         cylinderMat.SetColor("_Color", highlightColor);
         fillState = FillState.FILLING;
+        EventManager.Player.onWaypointFillStart?.Invoke(this);
     }
+
     public void SetFilled() { fillState = FillState.FILLED; }
     public void SetNone()
     {

@@ -7,6 +7,7 @@ public class EventManager : MonoBehaviour
 {
     public class Player
     {
+        public static Action<Waypoint> onWaypointFillStart;
         public static Action<Waypoint> onWaypointFilled;
 
     }
