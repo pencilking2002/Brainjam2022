@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3074649003626579699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1955, z: 0}
-  m_LocalScale: {x: 0.40018907, y: 0.4209009, z: 0.40018907}
+  m_LocalPosition: {x: 0, y: -0.1979, z: 0}
+  m_LocalScale: {x: 0.40018907, y: 0.25, z: 0.40018907}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3074649004209229038}
@@ -133,9 +133,10 @@ MonoBehaviour:
   defaultColor: {r: 0.17075986, g: 0.78653026, b: 1.0193846, a: 0}
   highlightColor: {r: 2.0104709, g: 6.408376, b: 7.999999, a: 0}
   cylinderRend: {fileID: 3074649003626579710}
-  fillState: 0
   loadingCircle: {fileID: 3074649004909859305}
+  fillState: 0
   fillSpeed: 0.5
+  minMaxCylinderScaleY: {x: 0.25, y: 1}
 --- !u!1 &3074649004468633155
 GameObject:
   m_ObjectHideFlags: 0
