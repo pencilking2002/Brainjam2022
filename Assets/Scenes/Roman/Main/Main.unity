@@ -1161,6 +1161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5dbb09ad88c104488d0525f73ea996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointTree:
+  - waypoints:
+    - {fileID: 1972743111}
+  - waypoints:
+    - {fileID: 1512795577}
+  - waypoints:
+    - {fileID: 1814538885}
   waypoints: []
   currWaypoint: {fileID: 0}
   hasCurrWaypoint: 0
@@ -2182,6 +2189,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3074649004209229038, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
   m_PrefabInstance: {fileID: 1732363481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1512795577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
+  m_PrefabInstance: {fileID: 1732363481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7aaa67477f656438f4a21f28414f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1651410028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
+      propertyPath: fillState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3074649004209229038, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2484,6 +2506,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3074649004209229038, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
   m_PrefabInstance: {fileID: 477708526}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1814538885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
+  m_PrefabInstance: {fileID: 477708526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7aaa67477f656438f4a21f28414f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1838112706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,6 +2718,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3074649004209229038, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
   m_PrefabInstance: {fileID: 3074649003647648628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1972743111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
+  m_PrefabInstance: {fileID: 3074649003647648628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7aaa67477f656438f4a21f28414f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989678019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3007,7 +3051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
       propertyPath: fillState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074649004209229038, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
       propertyPath: m_RootOrder
