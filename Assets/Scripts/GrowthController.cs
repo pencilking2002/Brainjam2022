@@ -10,7 +10,7 @@ public class GrowthController : MonoBehaviour
     private void Awake()
     {
         CacheMaterials();
-        StartGrowthTest();
+        //StartGrowthTest();
     }
 
     private void CacheMaterials()
@@ -33,5 +33,16 @@ public class GrowthController : MonoBehaviour
             }
         })
         .setRepeat(-1);
+    }
+
+    public void Grow()
+    {
+        LeanTween.value(gameObject, 0, 1, 2.0f).setOnUpdate((float val) =>
+       {
+           for (int i = 0; i < rends.Length; i++)
+           {
+               mats[i].SetFloat("_Grow", val);
+           }
+       });
     }
 }

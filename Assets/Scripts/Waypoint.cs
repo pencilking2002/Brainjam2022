@@ -26,6 +26,8 @@ public class Waypoint : MonoBehaviour
 
 
     [Header("Settings")]
+    public int maxNumPolypPickups = 3;
+    public int numPolypsPickedUp;
     [SerializeField] private FillState fillState;
     [SerializeField] private float fillSpeed = 0.05f;
     [SerializeField] private Vector2 minMaxCylinderScaleY;

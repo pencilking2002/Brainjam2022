@@ -41,13 +41,32 @@ public class VRController : MonoBehaviour
         currWaypoint = waypoint;
     }
 
+    private void OnPickupPolyp(PolypPickup pickup)
+    {
+        if (currWaypoint)
+        {
+            if (currWaypoint.numPolypsPickedUp < currWaypoint.maxNumPolypPickups)
+            {
+                currWaypoint.numPolypsPickedUp++;
+
+                if (currWaypoint.numPolypsPickedUp >= currWaypoint.maxNumPolypPickups)
+                {
+                    //Debug.Log("Picked up all polyps for waypoint");
+                    EventManager.Player.onCompletePolypPickupForWaypoint?.Invoke(currWaypoint);
+                }
+            }
+        }
+    }
+
     private void OnEnable()
     {
         EventManager.Player.onWaypointFilled += OnWaypointFilled;
+        EventManager.Player.onPickupPolyp += OnPickupPolyp;
     }
 
     private void OnDisable()
     {
         EventManager.Player.onWaypointFilled -= OnWaypointFilled;
+        EventManager.Player.onPickupPolyp -= OnPickupPolyp;
     }
 }

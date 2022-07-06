@@ -6,6 +6,8 @@ public class Util : MonoBehaviour
 {
     public static int waypointLayer = 7;
     public static int polypPlacementLayer = 8;
+    public static int polypColliderLayer = 9;
+
 }
 
 public static class ExtensionMethods
