@@ -40,7 +40,9 @@ public class PolypSpawner : MonoBehaviour
         for (int i = 0; i < waypoint.maxNumPolypPickups; i++)
         {
             var pickup = GetPickup();
-            pickup.transform.position = waypoint.transform.position + (Vector3.up * 0.5f) + (Random.insideUnitSphere * 1);
+            var randomVector = Random.insideUnitSphere;
+            randomVector.y *= 0.25f;
+            pickup.transform.position = waypoint.transform.position + (Vector3.up * 0.5f) + randomVector;
         }
     }
 

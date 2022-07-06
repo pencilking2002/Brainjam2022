@@ -35,6 +35,8 @@ public class PolypPlaceSpot : MonoBehaviour
         LeanTween.delayedCall(gameObject, 2, () =>
         {
             SetComplete();
+            EventManager.Game.onTriggerNextWaypointSequence?.Invoke();
+            Debug.Log("spawn next waypoint");
         });
     }
 

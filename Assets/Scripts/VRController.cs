@@ -36,7 +36,7 @@ public class VRController : MonoBehaviour
         SetPlayerPosition(waypoint.transform);
 
         if (currWaypoint && currWaypoint != waypoint)
-            currWaypoint.SetIdle();
+            currWaypoint.SetNone();
 
         currWaypoint = waypoint;
     }

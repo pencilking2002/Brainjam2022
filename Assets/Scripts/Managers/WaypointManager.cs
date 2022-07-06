@@ -36,7 +36,7 @@ public class WaypointManager : MonoBehaviour
         {
             currTreeIndex++;
 
-            if (currTreeIndex < waypoints.Length - 1)
+            if (currTreeIndex < waypoints.Length)
             {
                 var waypoints = waypointTree[currTreeIndex].waypoints;
 
@@ -44,6 +44,11 @@ public class WaypointManager : MonoBehaviour
                     waypoint.SetIdle();
 
                 EventManager.Player.onWaypointsRevealed?.Invoke(waypoints);
+                Debug.Log("Reveal waypoint");
+            }
+            else
+            {
+                Debug.Log("Will not reveal. currTreeIndex: " + currTreeIndex);
             }
         });
     }
@@ -57,19 +62,20 @@ public class WaypointManager : MonoBehaviour
         hasCurrWaypoint = currWaypoint != null;
     }
 
-    private void OnBeginWaypointSequence()
+
+    private void OnTriggerNextWaypointSequence()
     {
         RevealNext(1);
     }
 
     private void OnEnable()
     {
-        EventManager.Game.onBeginWaypointSequence += OnBeginWaypointSequence;
+        EventManager.Game.onTriggerNextWaypointSequence += OnTriggerNextWaypointSequence;
     }
 
     private void OnDisable()
     {
-        EventManager.Game.onBeginWaypointSequence -= OnBeginWaypointSequence;
+        EventManager.Game.onTriggerNextWaypointSequence -= OnTriggerNextWaypointSequence;
     }
 }
 
