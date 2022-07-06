@@ -50,6 +50,7 @@ public class IntroTextPanel : MonoBehaviour
         if (isDisplayed)
         {
             Hide();
+            EventManager.Game.onBeginWaypointSequence?.Invoke();
         }
     }
 

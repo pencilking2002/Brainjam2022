@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Util : MonoBehaviour
 {
-
+    public static int waypointLayer = 7;
+    public static int polypPlacementLayer = 8;
 }
 
 public static class ExtensionMethods

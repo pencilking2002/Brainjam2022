@@ -19,7 +19,7 @@ public class WaypointManager : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.waypointManager = this;
-        RevealNext();
+        //RevealNext();
     }
 
     private void Update()
@@ -30,17 +30,22 @@ public class WaypointManager : MonoBehaviour
         }
     }
 
-    private void RevealNext()
+    private void RevealNext(float delay = 0)
     {
-        currTreeIndex++;
-
-        if (currTreeIndex < waypoints.Length - 1)
+        LeanTween.delayedCall(gameObject, delay, () =>
         {
-            var waypoints = waypointTree[currTreeIndex].waypoints;
+            currTreeIndex++;
 
-            foreach (Waypoint waypoint in waypoints)
-                waypoint.SetIdle();
-        }
+            if (currTreeIndex < waypoints.Length - 1)
+            {
+                var waypoints = waypointTree[currTreeIndex].waypoints;
+
+                foreach (Waypoint waypoint in waypoints)
+                    waypoint.SetIdle();
+
+                EventManager.Player.onWaypointsRevealed?.Invoke(waypoints);
+            }
+        });
     }
 
     public bool HasWaypoint() { return hasCurrWaypoint; }
@@ -50,6 +55,21 @@ public class WaypointManager : MonoBehaviour
     {
         currWaypoint = waypoint;
         hasCurrWaypoint = currWaypoint != null;
+    }
+
+    private void OnBeginWaypointSequence()
+    {
+        RevealNext(1);
+    }
+
+    private void OnEnable()
+    {
+        EventManager.Game.onBeginWaypointSequence += OnBeginWaypointSequence;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Game.onBeginWaypointSequence -= OnBeginWaypointSequence;
     }
 }
 

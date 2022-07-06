@@ -9,6 +9,12 @@ public class EventManager : MonoBehaviour
     {
         public static Action<Waypoint> onWaypointFillStart;
         public static Action<Waypoint> onWaypointFilled;
+        public static Action<Waypoint[]> onWaypointsRevealed;
+    }
+
+    public class Game
+    {
+        public static Action onBeginWaypointSequence;
     }
 
     public class Input
