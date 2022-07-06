@@ -5,10 +5,20 @@ using UnityEngine;
 public class PolypPickup : MonoBehaviour
 {
     [SerializeField] private bool isActive;
+    private ParticleSystem ps;
+    private UnityEngine.ParticleSystem.EmissionModule emission;
+
+    private void Awake()
+    {
+        ps = GetComponentInChildren<ParticleSystem>();
+        emission = ps.emission;
+        emission.enabled = false;
+    }
 
     public void Activate(bool activate)
     {
         isActive = activate;
+        emission.enabled = activate;
     }
 
     public bool IsActive() { return isActive; }
