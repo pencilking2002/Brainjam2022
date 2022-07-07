@@ -7,10 +7,11 @@ public class PolypPickup : MonoBehaviour
     [SerializeField] private bool isActive;
     private ParticleSystem ps;
     private UnityEngine.ParticleSystem.EmissionModule emission;
-
+    private UnityEngine.ParticleSystem.MainModule main;
     private void Awake()
     {
         ps = GetComponentInChildren<ParticleSystem>();
+        main = ps.main;
         emission = ps.emission;
         emission.enabled = false;
     }
@@ -25,7 +26,16 @@ public class PolypPickup : MonoBehaviour
 
     public void Pickup()
     {
+        main.maxParticles = 100;
         GameManager.Instance.polypSpawner.InsertPickup(this);
         EventManager.Player.onPickupPolyp?.Invoke(this);
+    }
+
+    public void DecreaseEmissionRate()
+    {
+        if (main.maxParticles > 0)
+            main.maxParticles -= 2;
+        else
+            Pickup();
     }
 }

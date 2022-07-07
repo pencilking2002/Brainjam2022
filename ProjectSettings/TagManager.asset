@@ -15,8 +15,8 @@ TagManager:
   - Waypoint
   - PolypPlacement
   - PolypCollider
-  - 
-  - 
+  - ParticleForcefield
+  - Hand
   - 
   - 
   - 

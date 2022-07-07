@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [HideInInspector] public WaypointManager waypointManager;
     [HideInInspector] public PolypSpawner polypSpawner;
+    [HideInInspector] public VRController vrController;
 
     private void Awake()
     {

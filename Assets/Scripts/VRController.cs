@@ -18,6 +18,11 @@ public class VRController : MonoBehaviour
         canvas.transform.localPosition = localPos;
     }
 
+    private void Start()
+    {
+        GameManager.Instance.vrController = this;
+    }
+
     private void Update()
     {
         raycaster.Raycast(this);
