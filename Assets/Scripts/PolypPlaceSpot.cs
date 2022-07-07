@@ -15,6 +15,14 @@ public class PolypPlaceSpot : MonoBehaviour
     public Waypoint waypoint;
     [SerializeField] private GrowthController growthController;
     [SerializeField] private PlaceState placeState;
+    private Renderer rend;
+    private Material mat;
+
+    private void Awake()
+    {
+        rend = GetComponent<Renderer>();
+        mat = rend.material;
+    }
 
     private void OnCompletePolypPickupForWaypoint(Waypoint waypoint)
     {
@@ -26,9 +34,14 @@ public class PolypPlaceSpot : MonoBehaviour
     }
 
     public void SetNone() { placeState = PlaceState.NONE; }
-    public void SetReady() { placeState = PlaceState.READY; }
+    public void SetReady()
+    {
+        mat.SetFloat(Util.glowStrength, 1);
+        placeState = PlaceState.READY;
+    }
     public void SetInteractable()
     {
+        mat.SetFloat(Util.glowStrength, 0);
         growthController.Grow();
         placeState = PlaceState.INTERACTABLE;
 
@@ -40,7 +53,10 @@ public class PolypPlaceSpot : MonoBehaviour
         });
     }
 
-    public void SetComplete() { placeState = PlaceState.COMPLETE; }
+    public void SetComplete()
+    {
+        placeState = PlaceState.COMPLETE;
+    }
 
     public void Activate()
     {

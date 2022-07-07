@@ -8,6 +8,8 @@ public class Util : MonoBehaviour
     public static int polypPlacementLayer = 8;
     public static int polypColliderLayer = 9;
 
+    public static string glowStrength = "_GlowStrength";
+
 }
 
 public static class ExtensionMethods
