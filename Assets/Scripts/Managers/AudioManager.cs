@@ -36,13 +36,15 @@ public class AudioManager : MonoBehaviour
         PlayOneShotSound(audioSource, audioData.polypPickedUpSound);
     }
 
-    public void PlayVoiceCue(Action onComplete)
+    public void PlayVoiceCue(Action onComplete = null)
     {
         var clip = audioData.voiceCues[currVoiceCue];
         PlayOneShotSound(voiceAudioSource, audioData.voiceCues[currVoiceCue]);
         LeanTween.delayedCall(clip.length, () =>
         {
-            onComplete?.Invoke();
+            currVoiceCue++;
+            if (onComplete != null)
+                onComplete();
         });
     }
 

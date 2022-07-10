@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class PolypPickup : MonoBehaviour
@@ -10,7 +11,7 @@ public class PolypPickup : MonoBehaviour
     private UnityEngine.ParticleSystem.MainModule main;
     public AudioSource audioSource;
     public float pickupDuration = 2.0f;
-    public float pickupTimer;
+    [ReadOnly] public float pickupTimer;
     public float timerDecreaseRate = 0.01f;
 
     private void Awake()
@@ -36,7 +37,7 @@ public class PolypPickup : MonoBehaviour
         pickupTimer = pickupDuration;
         GameManager.Instance.polypSpawner.InsertPickup(this);
         EventManager.Player.onPickupPolyp?.Invoke(this);
-        // GameManager.Instance.audioManager.PlayPickupComplete(audioSource);
+        GameManager.Instance.audioManager.PlayVoiceCue();
         // Debug.Log("complete");
     }
 
