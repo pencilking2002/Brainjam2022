@@ -18,6 +18,17 @@ public class GameManager : MonoBehaviour
         InitInstance();
     }
 
+    private void Start()
+    {
+        LeanTween.delayedCall(1, () =>
+        {
+            audioManager.PlayVoiceCue(() =>
+            {
+                EventManager.Game.onTriggerNextWaypointSequence?.Invoke();
+            });
+        });
+    }
+
     private void InitInstance()
     {
         if (Instance == null)

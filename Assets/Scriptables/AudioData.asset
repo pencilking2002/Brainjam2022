@@ -24,3 +24,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7ec0d7d6f31740147847bc753bb95839, type: 3}
   - {fileID: 8300000, guid: 13ef7d4b660625b438d6726d9211de01, type: 3}
   polypPickedUpSound: {fileID: 8300000, guid: 666c000bb4d54e94b8bf1efc32550a16, type: 3}
+  voiceCues:
+  - {fileID: 8300000, guid: f4b128e4c9181634e85a86d646669a60, type: 3}

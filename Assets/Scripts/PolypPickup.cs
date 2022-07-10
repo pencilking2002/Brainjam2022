@@ -9,9 +9,13 @@ public class PolypPickup : MonoBehaviour
     private UnityEngine.ParticleSystem.EmissionModule emission;
     private UnityEngine.ParticleSystem.MainModule main;
     public AudioSource audioSource;
+    public float pickupDuration = 2.0f;
+    public float pickupTimer;
+    public float timerDecreaseRate = 0.01f;
 
     private void Awake()
     {
+        pickupTimer = pickupDuration;
         ps = GetComponentInChildren<ParticleSystem>();
         main = ps.main;
         emission = ps.emission;
@@ -28,7 +32,8 @@ public class PolypPickup : MonoBehaviour
 
     public void Pickup()
     {
-        main.maxParticles = 100;
+        //main.maxParticles = 100;
+        pickupTimer = pickupDuration;
         GameManager.Instance.polypSpawner.InsertPickup(this);
         EventManager.Player.onPickupPolyp?.Invoke(this);
         // GameManager.Instance.audioManager.PlayPickupComplete(audioSource);
@@ -37,9 +42,12 @@ public class PolypPickup : MonoBehaviour
 
     public void DecreaseEmissionRate()
     {
-        if (main.maxParticles > 0)
-            main.maxParticles -= 2;
-        else
+        // if (main.maxParticles > 0)
+        //     main.maxParticles -= 2;
+        // else
+        //     Pickup();
+        pickupTimer -= timerDecreaseRate * Time.deltaTime;
+        if (pickupTimer <= 0)
             Pickup();
     }
 }

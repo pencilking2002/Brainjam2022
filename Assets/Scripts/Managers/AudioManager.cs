@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,9 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private AudioSource voiceAudioSource;
     [SerializeField] private AudioData audioData;
+    [SerializeField] private int currVoiceCue;
 
     private void Awake()
     {
@@ -33,8 +36,18 @@ public class AudioManager : MonoBehaviour
         PlayOneShotSound(audioSource, audioData.polypPickedUpSound);
     }
 
+    public void PlayVoiceCue(Action onComplete)
+    {
+        var clip = audioData.voiceCues[currVoiceCue];
+        PlayOneShotSound(voiceAudioSource, audioData.voiceCues[currVoiceCue]);
+        LeanTween.delayedCall(clip.length, () =>
+        {
+            onComplete?.Invoke();
+        });
+    }
+
     private AudioClip GetRandomPickupClip()
     {
-        return audioData.pickupClips[Random.Range(0, audioData.pickupClips.Length)];
+        return audioData.pickupClips[UnityEngine.Random.Range(0, audioData.pickupClips.Length)];
     }
 }

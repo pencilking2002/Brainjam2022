@@ -9,4 +9,5 @@ public class AudioData : ScriptableObject
     public AudioClip track;
     public AudioClip[] pickupClips;
     public AudioClip polypPickedUpSound;
+    public AudioClip[] voiceCues;
 }
