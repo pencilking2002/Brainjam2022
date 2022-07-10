@@ -90,6 +90,7 @@ public class HandController : MonoBehaviour
                 });
             });
         });
+        //Debug.Log("complete");
     }
 
     private void OnEnable()

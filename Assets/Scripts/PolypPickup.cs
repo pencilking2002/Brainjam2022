@@ -31,7 +31,8 @@ public class PolypPickup : MonoBehaviour
         main.maxParticles = 100;
         GameManager.Instance.polypSpawner.InsertPickup(this);
         EventManager.Player.onPickupPolyp?.Invoke(this);
-        GameManager.Instance.audioManager.PlayPickupComplete(audioSource);
+        // GameManager.Instance.audioManager.PlayPickupComplete(audioSource);
+        // Debug.Log("complete");
     }
 
     public void DecreaseEmissionRate()

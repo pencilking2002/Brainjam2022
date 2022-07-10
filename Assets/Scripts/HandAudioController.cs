@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(AudioSource))]
 public class HandAudioController : MonoBehaviour
 {
-    private AudioSource audioSource;
+    [ReadOnly] private AudioSource audioSource;
     public Collider col;
     private bool isColliding;
 
@@ -36,5 +37,20 @@ public class HandAudioController : MonoBehaviour
     public void PlayRandomPickupSound()
     {
         GameManager.Instance.audioManager.PlayRandomPickupClip(audioSource);
+    }
+
+    private void OnPolypPickup(PolypPickup pickup)
+    {
+        GameManager.Instance.audioManager.PlayPickupComplete(audioSource);
+    }
+
+    private void OnEnable()
+    {
+        EventManager.Player.onPickupPolyp += OnPolypPickup;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.Player.onPickupPolyp -= OnPolypPickup;
     }
 }
