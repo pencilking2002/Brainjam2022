@@ -38,12 +38,17 @@ public class HandController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other != currPickupCollider)
+        if (other.gameObject.layer == Util.polypColliderLayer)
         {
-            currPickupCollider = other;
-            currPickup = other.GetComponent<PolypPickup>();
+            //Debug.Log("other: " + other.name);
+            if (other != currPickupCollider)
+            {
+                currPickupCollider = other;
+                currPickup = other.GetComponent<PolypPickup>();
+            }
+            //if (currPickup)
+            currPickup.DecreaseEmissionRate();
         }
-        currPickup.DecreaseEmissionRate();
     }
 
     private void SetGlowStrength(float glowStrength)
