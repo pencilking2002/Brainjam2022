@@ -6310,5 +6310,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: GEO ---------------------------------
       objectReference: {fileID: 0}
+    - target: {fileID: 8203556364384542006, guid: 4b6a06690ee53824f919d5296a56f2f2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b6a06690ee53824f919d5296a56f2f2, type: 3}

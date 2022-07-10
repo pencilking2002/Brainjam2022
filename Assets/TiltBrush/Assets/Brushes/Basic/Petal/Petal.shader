@@ -19,7 +19,7 @@ Shader "Brush/Special/Petal" {
     _MainTex("Base (RGB) TransGloss (A)", 2D) = "white" {}
   }
   SubShader{
-    Tags {"IgnoreProjector" = "True" "RenderType" = "Opaque"}
+    Tags {"IgnoreProjector" = "False" "RenderType" = "Opaque"}
     Cull Off
 
     CGPROGRAM
