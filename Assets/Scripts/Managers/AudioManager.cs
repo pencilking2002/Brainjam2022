@@ -17,10 +17,20 @@ public class AudioManager : MonoBehaviour
         musicAudioSource.PlayOneShot(audioData.track);
     }
 
+    private void PlayOneShotSound(AudioSource audioSource, AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
+
     public void PlayRandomPickupClip(AudioSource source)
     {
         var clip = GetRandomPickupClip();
-        source.PlayOneShot(clip);
+        PlayOneShotSound(source, clip);
+    }
+
+    public void PlayPickupComplete(AudioSource audioSource)
+    {
+        PlayOneShotSound(audioSource, audioData.polypPickedUpSound);
     }
 
     private AudioClip GetRandomPickupClip()

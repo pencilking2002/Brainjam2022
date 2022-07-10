@@ -8,6 +8,8 @@ public class PolypPickup : MonoBehaviour
     private ParticleSystem ps;
     private UnityEngine.ParticleSystem.EmissionModule emission;
     private UnityEngine.ParticleSystem.MainModule main;
+    public AudioSource audioSource;
+
     private void Awake()
     {
         ps = GetComponentInChildren<ParticleSystem>();
@@ -29,6 +31,7 @@ public class PolypPickup : MonoBehaviour
         main.maxParticles = 100;
         GameManager.Instance.polypSpawner.InsertPickup(this);
         EventManager.Player.onPickupPolyp?.Invoke(this);
+        GameManager.Instance.audioManager.PlayPickupComplete(audioSource);
     }
 
     public void DecreaseEmissionRate()
