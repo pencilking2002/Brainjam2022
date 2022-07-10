@@ -21,7 +21,7 @@ Properties {
 }
 
 Category {
-  Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+  Tags { "Queue"="Transparent" "IgnoreProjector"="False" "RenderType"="Transparent" }
   Blend One One // SrcAlpha One
   BlendOp Add, Min
   ColorMask RGBA
