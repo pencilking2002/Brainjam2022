@@ -63,6 +63,8 @@ public class AudioManager : MonoBehaviour
                 clip = audioData.waypointVoiceCues_03[currWaypoint.currVoiceCue];
             else if (index == 3)
                 clip = audioData.waypointVoiceCues_04[currWaypoint.currVoiceCue];
+            else if (index == 4)
+                clip = audioData.waypointVoiceCues_05[currWaypoint.currVoiceCue];
 
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>

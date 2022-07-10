@@ -27,7 +27,7 @@ Category {
   BlendOp Add, Min
   AlphaTest Greater .01
   ColorMask RGBA
-  Cull Off Lighting Off ZWrite Off Fog { Color (0,0,0,0) }
+  Cull Off Lighting Off ZWrite Off
 
   SubShader {
     Pass {
