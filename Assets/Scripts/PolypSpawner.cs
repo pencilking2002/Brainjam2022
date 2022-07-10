@@ -43,9 +43,10 @@ public class PolypSpawner : MonoBehaviour
     {
         pickup.Activate(false);
         pickup.transform.localPosition = Vector3.zero;
+
     }
 
-    private void PositionPickup(PolypPickup pickup, Waypoint waypoint)
+    public void PositionPickup(PolypPickup pickup, Waypoint waypoint)
     {
         // var randomVector = (new Vector3(0.001f, 0.001f, 0.001f) + Random.insideUnitSphere).normalized;
         // randomVector.y *= 0.15f;
@@ -60,13 +61,21 @@ public class PolypSpawner : MonoBehaviour
         PositionPickup(pickup, waypoint);
     }
 
+    private void OnPolypVoiceCueComplete(Waypoint waypoint)
+    {
+        var pickup = GetPickup();
+        PositionPickup(pickup, waypoint);
+    }
+
     private void OnEnable()
     {
         EventManager.Player.onWaypointFilled += OnWaypointFilled;
+        EventManager.Game.onPolypVoiceCueComplete += OnPolypVoiceCueComplete;
     }
 
     private void OnDisable()
     {
         EventManager.Player.onWaypointFilled -= OnWaypointFilled;
+        EventManager.Game.onPolypVoiceCueComplete -= OnPolypVoiceCueComplete;
     }
 }

@@ -18,6 +18,7 @@ public class EventManager : MonoBehaviour
     {
         public static Action onBeginWaypointSequence;
         public static Action onTriggerNextWaypointSequence;
+        public static Action<Waypoint> onPolypVoiceCueComplete;
     }
 
     public class Input

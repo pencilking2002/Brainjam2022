@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource musicAudioSource;
     [SerializeField] private AudioSource voiceAudioSource;
     [SerializeField] private AudioData audioData;
-    [SerializeField] private int currVoiceCue;
+    //[SerializeField] private int currVoiceCue;
 
     private void Awake()
     {
@@ -38,11 +38,23 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoiceCue(Action onComplete = null)
     {
-        var clip = audioData.voiceCues[currVoiceCue];
-        PlayOneShotSound(voiceAudioSource, audioData.voiceCues[currVoiceCue]);
+        var currWaypoint = GameManager.Instance.vrController.currWaypoint;
+        var index = currWaypoint.GetWaypintIndex();
+
+        AudioClip clip = null;
+        if (index == 0)
+            clip = audioData.waypointVoiceCues_01[currWaypoint.currVoiceCue];
+        else if (index == 1)
+            clip = audioData.waypointVoiceCues_02[currWaypoint.currVoiceCue];
+        else if (index == 2)
+            clip = audioData.waypointVoiceCues_03[currWaypoint.currVoiceCue];
+        else if (index == 3)
+            clip = audioData.waypointVoiceCues_04[currWaypoint.currVoiceCue];
+
+        PlayOneShotSound(voiceAudioSource, clip);
         LeanTween.delayedCall(clip.length, () =>
         {
-            currVoiceCue++;
+            currWaypoint.currVoiceCue++;
             if (onComplete != null)
                 onComplete();
         });

@@ -13,7 +13,6 @@ public class PolypPickup : MonoBehaviour
     public float pickupDuration = 2.0f;
     [ReadOnly] public float pickupTimer;
     public float timerDecreaseRate = 0.01f;
-
     private void Awake()
     {
         pickupTimer = pickupDuration;
@@ -33,12 +32,23 @@ public class PolypPickup : MonoBehaviour
 
     public void Pickup()
     {
+        if (!isActive)
+            return;
+
         //main.maxParticles = 100;
         pickupTimer = pickupDuration;
         GameManager.Instance.polypSpawner.InsertPickup(this);
+
+        var currWaypoint = GameManager.Instance.vrController.currWaypoint;
+        if (currWaypoint.numPolypsPickedUp < currWaypoint.maxNumPolypPickups - 1)
+        {
+            GameManager.Instance.audioManager.PlayVoiceCue(() =>
+            {
+                EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
+            });
+        }
         EventManager.Player.onPickupPolyp?.Invoke(this);
-        GameManager.Instance.audioManager.PlayVoiceCue();
-        // Debug.Log("complete");
+        Debug.Log("pickup");
     }
 
     public void DecreaseEmissionRate()
@@ -47,6 +57,9 @@ public class PolypPickup : MonoBehaviour
         //     main.maxParticles -= 2;
         // else
         //     Pickup();
+        if (!isActive)
+            return;
+
         pickupTimer -= timerDecreaseRate * Time.deltaTime;
         if (pickupTimer <= 0)
             Pickup();

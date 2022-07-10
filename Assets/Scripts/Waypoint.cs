@@ -23,15 +23,18 @@ public class Waypoint : MonoBehaviour
     [SerializeField] private Image outerCircle;
     [SerializeField] private Image loadingCircle;
     [SerializeField] private Collider col;
+    [SerializeField] private Waypoint nextWaypoint;
 
 
     [Header("Settings")]
+    private int index;
     public int maxNumPolypPickups = 3;
     public int numPolypsPickedUp;
     [SerializeField] private FillState fillState;
     [SerializeField] private float fillSpeed = 0.05f;
     [SerializeField] private Vector2 minMaxCylinderScaleY;
     private Material cylinderMat;
+    public int currVoiceCue;
 
     private void Awake()
     {
@@ -41,7 +44,6 @@ public class Waypoint : MonoBehaviour
             Debug.Log("set none");
             SetNone();
         }
-
     }
 
     public void OnUpdate()
@@ -57,6 +59,21 @@ public class Waypoint : MonoBehaviour
                 EventManager.Player.onWaypointFilled?.Invoke(this);
             }
         }
+    }
+
+    public bool HasNextWaypoint()
+    {
+        return nextWaypoint != null;
+    }
+
+    public Waypoint GetNextWaypoint()
+    {
+        return nextWaypoint;
+    }
+
+    public int GetWaypintIndex()
+    {
+        return index;
     }
 
     private void IncreaseFill()
@@ -114,4 +131,12 @@ public class Waypoint : MonoBehaviour
         Activate(false);
     }
 
+    private void OnDrawGizmos()
+    {
+        if (nextWaypoint)
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(transform.position, nextWaypoint.transform.position);
+        }
+    }
 }

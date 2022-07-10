@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-    [SerializeField] private WaypointTree[] waypointTree;
-    [SerializeField] private int currTreeIndex = -1;
+    //[SerializeField] private WaypointTree[] waypointTree;
+    //[SerializeField] private int currTreeIndex = -1;
     [SerializeField] private Waypoint[] waypoints;
     [SerializeField] private Waypoint currWaypoint;
     [SerializeField] private bool hasCurrWaypoint;
@@ -34,21 +34,26 @@ public class WaypointManager : MonoBehaviour
     {
         LeanTween.delayedCall(gameObject, delay, () =>
         {
-            currTreeIndex++;
+            //currTreeIndex++;
+            var prevWaypoint = GameManager.Instance.vrController.currWaypoint;
+            bool isFirstWaypoint = prevWaypoint == null;
 
-            if (currTreeIndex < waypoints.Length)
+            //if (currTreeIndex < waypoints.Length)
+            if (isFirstWaypoint || prevWaypoint.HasNextWaypoint())
             {
-                var waypoints = waypointTree[currTreeIndex].waypoints;
+                var nextWaypoint = isFirstWaypoint ? waypoints[0] : prevWaypoint.GetNextWaypoint();
+                nextWaypoint.SetIdle();
+                // var waypoints = waypointTree[currTreeIndex].waypoints;
 
-                foreach (Waypoint waypoint in waypoints)
-                    waypoint.SetIdle();
+                // foreach (Waypoint waypoint in waypoints)
+                //     waypoint.SetIdle();
 
                 EventManager.Player.onWaypointsRevealed?.Invoke(waypoints);
                 Debug.Log("Reveal waypoint");
             }
             else
             {
-                Debug.Log("Will not reveal. currTreeIndex: " + currTreeIndex);
+                Debug.Log("Will not reveal.Last waypoint reached ");
             }
         });
     }
