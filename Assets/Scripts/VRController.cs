@@ -61,6 +61,12 @@ public class VRController : MonoBehaviour
             currWaypoint.SetNone();
 
         currWaypoint = waypoint;
+        if (currWaypoint.GetWaypintIndex() == 0)
+            GameManager.Instance.audioManager.PlayVoiceCue(() =>
+            {
+                EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
+            });
+
     }
 
     private void OnPickupPolyp(PolypPickup pickup)

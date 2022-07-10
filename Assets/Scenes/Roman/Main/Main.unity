@@ -6173,6 +6173,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1844559436}
     m_Modifications:
+    - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: index
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6681555814559559804, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: m_Name
       value: WaypointManager
@@ -6225,6 +6233,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.026
       objectReference: {fileID: 0}
+    - target: {fileID: 6681555814616937195, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxNumPolypPickups
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8508143459828020549, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.48
@@ -6236,6 +6248,10 @@ PrefabInstance:
     - target: {fileID: 8508143459828020549, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -40.871
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508143459828020550, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: index
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}

@@ -63,6 +63,10 @@ public class WaypointManager : MonoBehaviour
 
     public void SetCurrWaypoint(Waypoint waypoint)
     {
+        //Debug.Log(waypoint);
+        //if (waypoint == null)
+        //GameManager.Instance.audioManager.PlayVoiceCue();
+
         currWaypoint = waypoint;
         hasCurrWaypoint = currWaypoint != null;
     }

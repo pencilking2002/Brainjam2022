@@ -27,7 +27,7 @@ public class Waypoint : MonoBehaviour
 
 
     [Header("Settings")]
-    private int index;
+    [SerializeField] private int index;
     public int maxNumPolypPickups = 3;
     public int numPolypsPickedUp;
     [SerializeField] private FillState fillState;
@@ -124,7 +124,10 @@ public class Waypoint : MonoBehaviour
         EventManager.Player.onWaypointFillStart?.Invoke(this);
     }
 
-    public void SetFilled() { fillState = FillState.FILLED; }
+    public void SetFilled()
+    {
+        fillState = FillState.FILLED;
+    }
     public void SetNone()
     {
         fillState = FillState.NONE;
