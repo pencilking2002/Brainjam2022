@@ -18,7 +18,7 @@ Shader "Brush/Special/DiamondHull" {
   }
 
   SubShader {
-    Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+    Tags { "Queue"="Transparent" "IgnoreProjector"="False" "RenderType"="Transparent" }
     Blend One One
     Cull off ZWrite Off
     Fog{ Mode Off }

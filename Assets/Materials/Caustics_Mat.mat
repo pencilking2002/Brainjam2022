@@ -59,7 +59,7 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
-    - _TextureScale: 8.5
+    - _TextureScale: 20
     - _UseUIAlphaClip: 0
     - __dirty: 0
     - _colorShiftSpeed: 0.1

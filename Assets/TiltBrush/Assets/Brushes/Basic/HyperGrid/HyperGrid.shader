@@ -19,7 +19,7 @@ Properties {
 }
 
 Category {
-  Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+  Tags { "Queue"="Transparent" "IgnoreProjector"="False" "RenderType"="Transparent" }
   Blend One One
   BlendOp Add, Min
   AlphaTest Greater .01
