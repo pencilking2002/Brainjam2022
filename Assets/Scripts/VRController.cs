@@ -10,6 +10,7 @@ public class VRController : MonoBehaviour
     [SerializeField] private XROrigin origin;
     [SerializeField] private LookRaycaster raycaster;
     public Waypoint currWaypoint;
+    public HandAudioController[] handAudioControllers;
 
     private void Awake()
     {
@@ -26,6 +27,22 @@ public class VRController : MonoBehaviour
     private void Update()
     {
         raycaster.Raycast(this);
+    }
+
+    public HandAudioController GetHandAudioController(Vector3 particlePos, out bool controllerFound)
+    {
+        controllerFound = false;
+        for (int i = 0; i < handAudioControllers.Length; i++)
+        {
+            HandAudioController audioController = handAudioControllers[i];
+            if (audioController.col.bounds.Contains(particlePos))
+            {
+                controllerFound = true;
+                return audioController;
+            }
+
+        }
+        return null;
     }
 
     public void SetPlayerPosition(Transform spawnTransform)

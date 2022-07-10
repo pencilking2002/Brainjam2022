@@ -13,3 +13,13 @@ MonoBehaviour:
   m_Name: AudioData
   m_EditorClassIdentifier: 
   track: {fileID: 8300000, guid: 20eb24fb389d4a946a46f83b71754798, type: 3}
+  pickupClips:
+  - {fileID: 8300000, guid: ddad6e14c584944418e3df2da1f69752, type: 3}
+  - {fileID: 8300000, guid: 3ab1dad6f524cce45973703f7dc638dc, type: 3}
+  - {fileID: 8300000, guid: 7abb43f2b64d89844a01c73ff7e44fc2, type: 3}
+  - {fileID: 8300000, guid: b72b0641fe8fe66449c2b126268e1d01, type: 3}
+  - {fileID: 8300000, guid: 8c2d8fed811e2414aba6ffecbdf84f96, type: 3}
+  - {fileID: 8300000, guid: 9ddbb95f71162b5448ada7437782a419, type: 3}
+  - {fileID: 8300000, guid: b60220781db5ac342b434a9713340123, type: 3}
+  - {fileID: 8300000, guid: 7ec0d7d6f31740147847bc753bb95839, type: 3}
+  - {fileID: 8300000, guid: 13ef7d4b660625b438d6726d9211de01, type: 3}

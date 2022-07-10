@@ -40,16 +40,19 @@ public class HandController : MonoBehaviour
     {
         if (other.gameObject.layer == Util.polypColliderLayer)
         {
-            //Debug.Log("other: " + other.name);
             if (other != currPickupCollider)
             {
                 currPickupCollider = other;
                 currPickup = other.GetComponent<PolypPickup>();
             }
-            //if (currPickup)
             currPickup.DecreaseEmissionRate();
         }
     }
+
+    // private void OnParticleTrigger()
+    // {
+    //     Debug.Log("trigger");
+    // }
 
     private void SetGlowStrength(float glowStrength)
     {
@@ -87,7 +90,6 @@ public class HandController : MonoBehaviour
                 });
             });
         });
-
     }
 
     private void OnEnable()
