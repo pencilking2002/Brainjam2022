@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb1c3cd331bd6e4290eb179a23939b1, type: 3}
   m_Name: AudioData
   m_EditorClassIdentifier: 
-  track: {fileID: 8300000, guid: 20eb24fb389d4a946a46f83b71754798, type: 3}
+  track: {fileID: 8300000, guid: 46b3158cb3350684d9855c74733695db, type: 3}
   teleportBuildup: {fileID: 8300000, guid: 99da81371dc99b2408071308d3ec3bdf, type: 3}
   teleport: {fileID: 8300000, guid: e372675141137cf43a4d74c9f14c29e7, type: 3}
   pickupClips:
@@ -39,18 +39,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af0d8a828e99e4e49ae4c77cb170c39a, type: 3}
   waypointVoiceCues_02:
   - {fileID: 8300000, guid: 6aa0f405d14b649eda98a676c49718ba, type: 3}
-  - {fileID: 8300000, guid: 55b0083fe99575e4fb8a656249ecd193, type: 3}
+  - {fileID: 8300000, guid: ed2358d449058f24d9585ea6bf4e0099, type: 3}
   - {fileID: 8300000, guid: a51d844040ba64d169cf68e1cf80b8f2, type: 3}
   waypointVoiceCues_03:
   - {fileID: 8300000, guid: 9e36344a2cc214d01867b3fdf24e0a8f, type: 3}
   - {fileID: 8300000, guid: 765309f7dcd684432b850b903c395c11, type: 3}
   - {fileID: 8300000, guid: 15d83b4fc63464101822548806b76f45, type: 3}
-  - {fileID: 8300000, guid: 14f53b0a8f9ac47f28cefd55065ff83a, type: 3}
   waypointVoiceCues_04:
-  - {fileID: 8300000, guid: 10ebe221e4dd5f44296b29ab48d5d5e8, type: 3}
-  - {fileID: 8300000, guid: 3ffc050c84956624fb0f2a35414ab728, type: 3}
-  - {fileID: 8300000, guid: e58be6de9c1003642826f033b09afc26, type: 3}
-  - {fileID: 8300000, guid: 6cb9c497288f56f4697656d235de72cb, type: 3}
+  - {fileID: 8300000, guid: f2b7e5fdeec0c8c41a22b72f4964bcf1, type: 3}
+  - {fileID: 8300000, guid: 8f37beda3e83c8e43b9ab6335f586fb9, type: 3}
+  - {fileID: 8300000, guid: ec9ccea91dfb5d245ac9b8dab140b4d8, type: 3}
+  - {fileID: 8300000, guid: 16018706b2c7f724c82eba74fb30ebb4, type: 3}
   waypointVoiceCues_05:
   - {fileID: 8300000, guid: 33209bf2d8aa0417592095aec86bb222, type: 3}
   - {fileID: 8300000, guid: d3a07f3dd5f0d42319c1dda5e50ed3ed, type: 3}

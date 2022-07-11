@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoiceCue(Action onComplete = null)
     {
-        LeanTween.value(gameObject, 1, 0, 0.3f).setOnUpdate((float val) =>
+        LeanTween.value(gameObject, 0.6f, 0, 0.3f).setOnUpdate((float val) =>
         {
             musicAudioSource_02.volume = val;
         });
@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>
             {
-                LeanTween.value(gameObject, 0, 1, 0.3f).setOnUpdate((float val) =>
+                LeanTween.value(gameObject, 0, 0.6f, 0.3f).setOnUpdate((float val) =>
                 {
                     musicAudioSource_02.volume = val;
                 });

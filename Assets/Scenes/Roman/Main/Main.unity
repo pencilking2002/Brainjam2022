@@ -6148,6 +6148,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1844559436}
     m_Modifications:
+    - target: {fileID: 2041259597910098592, guid: 9a8678c70afabe141a26b395cfeee05b, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041259597910098592, guid: 9a8678c70afabe141a26b395cfeee05b, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041259597910098592, guid: 9a8678c70afabe141a26b395cfeee05b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041259597910098592, guid: 9a8678c70afabe141a26b395cfeee05b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2041259597910098592, guid: 9a8678c70afabe141a26b395cfeee05b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2041259598294881351, guid: 9a8678c70afabe141a26b395cfeee05b, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 100
@@ -6257,6 +6277,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1844559436}
     m_Modifications:
+    - target: {fileID: 860051611820107812, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: m_Volume
+      value: 0.603
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680378664036034752, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: m_Volume
+      value: 0.755
+      objectReference: {fileID: 0}
     - target: {fileID: 5680378665597298731, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6328,7 +6356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: maxNumPolypPickups
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: index
