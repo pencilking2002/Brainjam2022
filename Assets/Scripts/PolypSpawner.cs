@@ -57,44 +57,44 @@ public class PolypSpawner : MonoBehaviour
         pickup.transform.position = spot.transform.position + (Vector3.up * 0.5f) + (playerDirection * 0.5f);
     }
 
-    private void OnWaypointFilled(Waypoint waypoint)
-    {
-        if (waypoint.GetWaypointIndex() != 0)
-        {
-            var pickup = GetPickup();
-            PositionPickup(pickup, waypoint);
-        }
-    }
+    // private void OnWaypointFilled(Waypoint waypoint)
+    // {
+    //     if (waypoint.GetWaypointIndex() != 0)
+    //     {
+    //         var pickup = GetPickup();
+    //         PositionPickup(pickup, waypoint);
+    //     }
+    // }
 
-    private void OnPolypVoiceCueComplete(Waypoint waypoint)
-    {
-        if (waypoint.GetWaypointIndex() == 0)
-        {
-            if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups - 1)
-            {
-                var pickup = GetPickup();
-                PositionPickup(pickup, waypoint);
-            }
-        }
-        else
-        {
-            if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups - 1)
-            {
-                var pickup = GetPickup();
-                PositionPickup(pickup, waypoint);
-            }
-        }
-    }
+    // private void OnPolypVoiceCueComplete(Waypoint waypoint)
+    // {
+    //     if (waypoint.GetWaypointIndex() == 0)
+    //     {
+    //         if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups)
+    //         {
+    //             var pickup = GetPickup();
+    //             PositionPickup(pickup, waypoint);
+    //         }
+    //     }
+    //     else
+    //     {
+    //         if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups)
+    //         {
+    //             var pickup = GetPickup();
+    //             PositionPickup(pickup, waypoint);
+    //         }
+    //     }
+    // }
 
     private void OnEnable()
     {
-        EventManager.Player.onWaypointFilled += OnWaypointFilled;
-        EventManager.Game.onPolypVoiceCueComplete += OnPolypVoiceCueComplete;
+        //EventManager.Player.onWaypointFilled += OnWaypointFilled;
+        //EventManager.Game.onPolypVoiceCueComplete += OnPolypVoiceCueComplete;
     }
 
     private void OnDisable()
     {
-        EventManager.Player.onWaypointFilled -= OnWaypointFilled;
-        EventManager.Game.onPolypVoiceCueComplete -= OnPolypVoiceCueComplete;
+        //EventManager.Player.onWaypointFilled -= OnWaypointFilled;
+        //EventManager.Game.onPolypVoiceCueComplete -= OnPolypVoiceCueComplete;
     }
 }

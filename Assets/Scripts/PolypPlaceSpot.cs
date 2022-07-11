@@ -68,37 +68,37 @@ public class PolypPlaceSpot : MonoBehaviour
             Gizmos.DrawLine(transform.position, waypoint.transform.position);
         }
     }
-    private void OnPolypVoiceCueComplete(Waypoint waypoint)
-    {
-        if (this.waypoint.GetWaypointIndex() == 0)
-        {
-            if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups - 2)
-            {
-                Debug.Log("complete voice cue. curr cue num:" + waypoint.numPolypsPickedUp + ". max: " + waypoint.maxNumPolypPickups);
+    // private void OnPolypVoiceCueComplete(Waypoint waypoint)
+    // {
+    //     if (this.waypoint.GetWaypointIndex() == 0)
+    //     {
+    //         if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups - 2)
+    //         {
+    //             Debug.Log("complete voice cue. curr cue num:" + waypoint.numPolypsPickedUp + ". max: " + waypoint.maxNumPolypPickups);
 
-                if (IsNone())
-                    SetReady();
-            }
-        }
-        else
-        {
-            if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups)
-            {
-                Debug.Log("complete voice cue. curr cue num:" + waypoint.numPolypsPickedUp + ". max: " + waypoint.maxNumPolypPickups);
+    //             if (IsNone())
+    //                 SetReady();
+    //         }
+    //     }
+    //     else
+    //     {
+    //         if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups)
+    //         {
+    //             Debug.Log("complete voice cue. curr cue num:" + waypoint.numPolypsPickedUp + ". max: " + waypoint.maxNumPolypPickups);
 
-                if (IsNone())
-                    SetReady();
-            }
-        }
-    }
+    //             if (IsNone())
+    //                 SetReady();
+    //         }
+    //     }
+    // }
 
     private void OnEnable()
     {
-        EventManager.Game.onPolypVoiceCueComplete += OnPolypVoiceCueComplete;
+        //EventManager.Game.onPolypVoiceCueComplete += OnPolypVoiceCueComplete;
     }
 
     private void OnDisable()
     {
-        EventManager.Game.onPolypVoiceCueComplete -= OnPolypVoiceCueComplete;
+        //EventManager.Game.onPolypVoiceCueComplete -= OnPolypVoiceCueComplete;
     }
 }

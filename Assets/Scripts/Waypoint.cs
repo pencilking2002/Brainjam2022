@@ -50,6 +50,8 @@ public class Waypoint : MonoBehaviour
     private void WaypointFilled()
     {
         var player = GameManager.Instance.vrController;
+        player.SetPlayerPosition(transform);
+        player.currWaypoint = this;
 
         // Hide the current waypoint the player is on
         if (player.currWaypoint && player.currWaypoint != this)
@@ -58,7 +60,16 @@ public class Waypoint : MonoBehaviour
         // The first waypoint is special and starts a 
         // voice key when the player teleports to it
         if (this.GetWaypointIndex() == 0)
+        {
             PlayNextVoiceCue();
+        }
+        // Otherwise, spawn a pickup
+        else
+        {
+            var spawner = GameManager.Instance.polypSpawner;
+            var pickup = spawner.GetPickup();
+            spawner.PositionPickup(pickup, this);
+        }
     }
 
     public void PlayNextVoiceCue()
@@ -66,6 +77,18 @@ public class Waypoint : MonoBehaviour
         this.currVoiceCue++;
         GameManager.Instance.audioManager.PlayVoiceCue(() =>
         {
+            if (currVoiceCue < maxNumPolypPickups)
+            {
+                var spawner = GameManager.Instance.polypSpawner;
+                var pickup = spawner.GetPickup();
+                spawner.PositionPickup(pickup, this);
+            }
+            else if (currVoiceCue == maxNumPolypPickups)
+            {
+                var placement = GameManager.Instance.GetPlaceSpot(this);
+                if (placement.IsNone())
+                    placement.SetReady();
+            }
             EventManager.Game.onPolypVoiceCueComplete?.Invoke(this);
         });
     }
@@ -80,6 +103,7 @@ public class Waypoint : MonoBehaviour
             if (loadingCircle.fillAmount >= 1.0f)
             {
                 SetNone();
+                WaypointFilled();
                 EventManager.Player.onWaypointFilled?.Invoke(this);
             }
         }
@@ -97,6 +121,7 @@ public class Waypoint : MonoBehaviour
 
     public int GetWaypointIndex()
     {
+        Debug.Log("siblign index: " + transform.GetSiblingIndex());
         return transform.GetSiblingIndex();
     }
 

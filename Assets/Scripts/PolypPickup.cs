@@ -35,29 +35,33 @@ public class PolypPickup : MonoBehaviour
         if (!isActive)
             return;
 
-        //main.maxParticles = 100;
         pickupTimer = pickupDuration;
         GameManager.Instance.polypSpawner.InsertPickup(this);
 
         var currWaypoint = GameManager.Instance.vrController.currWaypoint;
-        if (currWaypoint.numPolypsPickedUp <= currWaypoint.maxNumPolypPickups)
+        if (currWaypoint.numPolypsPickedUp < currWaypoint.maxNumPolypPickups)
         {
-            GameManager.Instance.audioManager.PlayVoiceCue(() =>
-            {
-                EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
-                Debug.Log($"voice cur complete: curr num:{currWaypoint.numPolypsPickedUp} max:{currWaypoint.maxNumPolypPickups}");
-            });
+            Debug.Log("pickup");
+            currWaypoint.numPolypsPickedUp++;
+            currWaypoint.PlayNextVoiceCue();
+
+            // if (currWaypoint.numPolypsPickedUp == currWaypoint.maxNumPolypPickups)
+            // {
+            //     //Debug.Log("Picked up all polyps for waypoint");
+            //     EventManager.Player.onCompletePolypPickupForWaypoint?.Invoke(currWaypoint);
+            // }
+            EventManager.Player.onPickupPolyp?.Invoke(this);
+
+            // GameManager.Instance.audioManager.PlayVoiceCue(() =>
+            // {
+            //     EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
+            //     Debug.Log($"voice cur complete: curr num:{currWaypoint.numPolypsPickedUp} max:{currWaypoint.maxNumPolypPickups}");
+            // });
         }
-        EventManager.Player.onPickupPolyp?.Invoke(this);
-        Debug.Log("pickup");
     }
 
     public void DecreaseEmissionRate()
     {
-        // if (main.maxParticles > 0)
-        //     main.maxParticles -= 2;
-        // else
-        //     Pickup();
         if (!isActive)
             return;
 
