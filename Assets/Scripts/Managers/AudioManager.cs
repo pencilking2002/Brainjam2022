@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         sfxAudioSource.mute = false;
+        sfxAudioSource.volume = 1;
         //PlayMusic();
     }
 
@@ -100,6 +101,7 @@ public class AudioManager : MonoBehaviour
     public void PlaySimulationSound()
     {
         PlayOneShotSound(sfxAudioSource, audioData.simulation);
+        Debug.Log("plays simulation sound");
     }
 
     private AudioClip GetRandomPickupClip()
