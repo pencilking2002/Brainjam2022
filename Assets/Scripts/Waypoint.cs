@@ -70,6 +70,8 @@ public class Waypoint : MonoBehaviour
             var pickup = spawner.GetPickup();
             spawner.PositionPickup(pickup, this);
         }
+
+        GameManager.Instance.audioManager.Teleport();
     }
 
     public void PlayNextVoiceCue()

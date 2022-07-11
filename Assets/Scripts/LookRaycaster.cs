@@ -28,6 +28,7 @@ public class LookRaycaster : MonoBehaviour
                 if (waypoint.IsIdle())
                 {
                     waypoint.SetFilling();
+                    GameManager.Instance.audioManager.PlayBuildup();
                 }
             }
         }
@@ -39,6 +40,10 @@ public class LookRaycaster : MonoBehaviour
                     GameManager.Instance.waypointManager.GetCurrWaypoint().SetIdle();
 
                 GameManager.Instance.waypointManager.SetCurrWaypoint(null);
+            }
+            else
+            {
+                GameManager.Instance.audioManager.StopBuildup();
             }
         }
 

@@ -5,23 +5,25 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource musicAudioSource;
+    [SerializeField] private AudioSource musicAudioSource_01;
+    [SerializeField] private AudioSource musicAudioSource_02;
     [SerializeField] private AudioSource voiceAudioSource;
     [SerializeField] private AudioData audioData;
     //[SerializeField] private int currVoiceCue;
 
     private void Awake()
     {
-        PlayMusic();
+        //PlayMusic();
     }
 
-    private void PlayMusic()
-    {
-        musicAudioSource.PlayOneShot(audioData.track);
-    }
+    // private void PlayMusic()
+    // {
+    //     musicAudioSource_01.PlayOneShot(audioData.track);
+    // }
 
-    private void PlayOneShotSound(AudioSource audioSource, AudioClip clip)
+    private void PlayOneShotSound(AudioSource audioSource, AudioClip clip, bool isLoop = false)
     {
+        audioSource.loop = isLoop;
         audioSource.PlayOneShot(clip);
     }
 
@@ -38,6 +40,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoiceCue(Action onComplete = null)
     {
+        LeanTween.value(gameObject, 1, 0, 0.3f).setOnUpdate((float val) =>
+        {
+            musicAudioSource_02.volume = val;
+        });
         var currWaypoint = GameManager.Instance.vrController.currWaypoint;
 
         AudioClip clip = null;
@@ -47,6 +53,10 @@ public class AudioManager : MonoBehaviour
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>
             {
+                LeanTween.value(gameObject, 0, 1, 0.3f).setOnUpdate((float val) =>
+                {
+                    musicAudioSource_02.volume = val;
+                });
                 if (onComplete != null)
                     onComplete();
             });
@@ -73,7 +83,22 @@ public class AudioManager : MonoBehaviour
                     onComplete();
             });
         }
+    }
 
+    public void PlayBuildup()
+    {
+        PlayOneShotSound(voiceAudioSource, audioData.teleportBuildup, true);
+    }
+
+    public void StopBuildup()
+    {
+        // voiceAudioSource.loop = false;
+        // voiceAudioSource.Stop();
+    }
+
+    public void Teleport()
+    {
+        PlayOneShotSound(voiceAudioSource, audioData.teleport);
     }
 
     private AudioClip GetRandomPickupClip()
