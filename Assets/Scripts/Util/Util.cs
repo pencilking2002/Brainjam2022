@@ -9,6 +9,7 @@ public class Util : MonoBehaviour
     public static int polypColliderLayer = 9;
 
     public static string glowStrength = "_GlowStrength";
+    public static string grow = "_Grow";
 
 }
 
