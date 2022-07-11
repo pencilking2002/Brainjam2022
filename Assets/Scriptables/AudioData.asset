@@ -40,8 +40,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af0d8a828e99e4e49ae4c77cb170c39a, type: 3}
   waypointVoiceCues_02:
   - {fileID: 8300000, guid: 6aa0f405d14b649eda98a676c49718ba, type: 3}
-  - {fileID: 8300000, guid: ed2358d449058f24d9585ea6bf4e0099, type: 3}
-  - {fileID: 8300000, guid: a51d844040ba64d169cf68e1cf80b8f2, type: 3}
+  - {fileID: 8300000, guid: bfe5a25b235f64d44a2b9596e8771b50, type: 3}
+  - {fileID: 8300000, guid: 7d193fc8b23a0c448b0684cdf9fd98ac, type: 3}
   waypointVoiceCues_03:
   - {fileID: 8300000, guid: 9e36344a2cc214d01867b3fdf24e0a8f, type: 3}
   - {fileID: 8300000, guid: 765309f7dcd684432b850b903c395c11, type: 3}
