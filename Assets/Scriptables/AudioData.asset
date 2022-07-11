@@ -37,7 +37,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: af0d8a828e99e4e49ae4c77cb170c39a, type: 3}
   waypointVoiceCues_02:
   - {fileID: 8300000, guid: 6aa0f405d14b649eda98a676c49718ba, type: 3}
-  - {fileID: 8300000, guid: 7fa50c2f55d8c41d1a218323b93f5d98, type: 3}
+  - {fileID: 8300000, guid: 55b0083fe99575e4fb8a656249ecd193, type: 3}
   - {fileID: 8300000, guid: a51d844040ba64d169cf68e1cf80b8f2, type: 3}
   waypointVoiceCues_03:
   - {fileID: 8300000, guid: 9e36344a2cc214d01867b3fdf24e0a8f, type: 3}
@@ -45,10 +45,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 15d83b4fc63464101822548806b76f45, type: 3}
   - {fileID: 8300000, guid: 14f53b0a8f9ac47f28cefd55065ff83a, type: 3}
   waypointVoiceCues_04:
-  - {fileID: 8300000, guid: b13258741c2014a10a7b12f7e54faf8e, type: 3}
-  - {fileID: 8300000, guid: 481b3bc98f55a4396afc39756b239c37, type: 3}
-  - {fileID: 8300000, guid: f7e06617858f1430ea0ed0feb49ba76d, type: 3}
-  - {fileID: 8300000, guid: a9a6843e4d5bf4993b1f65b2de3f963b, type: 3}
+  - {fileID: 8300000, guid: 10ebe221e4dd5f44296b29ab48d5d5e8, type: 3}
+  - {fileID: 8300000, guid: 3ffc050c84956624fb0f2a35414ab728, type: 3}
+  - {fileID: 8300000, guid: e58be6de9c1003642826f033b09afc26, type: 3}
+  - {fileID: 8300000, guid: 6cb9c497288f56f4697656d235de72cb, type: 3}
   waypointVoiceCues_05:
   - {fileID: 8300000, guid: 33209bf2d8aa0417592095aec86bb222, type: 3}
   - {fileID: 8300000, guid: d3a07f3dd5f0d42319c1dda5e50ed3ed, type: 3}

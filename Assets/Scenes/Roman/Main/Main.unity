@@ -148,6 +148,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
+      propertyPath: currVoiceCue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
+      propertyPath: maxVoiceCues
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649004209229037, guid: a0ad3c5bb1c1e9d4997858b8634e547c, type: 3}
       propertyPath: maxNumPolypPickups
       value: 5
       objectReference: {fileID: 0}
@@ -6414,14 +6422,38 @@ PrefabInstance:
       propertyPath: index
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: currVoiceCue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxVoiceCues
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxNumPolypPickups
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: index
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: currVoiceCue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxVoiceCues
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: nextWaypoint
       value: 
       objectReference: {fileID: 221641854}
+    - target: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxNumPolypPickups
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6681555814559559804, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: m_Name
       value: WaypointManager
@@ -6475,6 +6507,14 @@ PrefabInstance:
       value: 0.026
       objectReference: {fileID: 0}
     - target: {fileID: 6681555814616937195, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: currVoiceCue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681555814616937195, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxVoiceCues
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681555814616937195, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: maxNumPolypPickups
       value: 5
       objectReference: {fileID: 0}
@@ -6493,6 +6533,14 @@ PrefabInstance:
     - target: {fileID: 8508143459828020550, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: index
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508143459828020550, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: currVoiceCue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508143459828020550, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
+      propertyPath: maxVoiceCues
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}

@@ -34,11 +34,11 @@ public class Waypoint : MonoBehaviour
     [SerializeField] private float fillSpeed = 0.05f;
     [SerializeField] private Vector2 minMaxCylinderScaleY;
     private Material cylinderMat;
-    public int currVoiceCue = -1;
+    public int currVoiceCue;
+    public int maxVoiceCues;
 
     private void Awake()
     {
-        currVoiceCue = -1;
         cylinderMat = cylinderRend.material;
         if (IsNone())
         {
@@ -74,23 +74,34 @@ public class Waypoint : MonoBehaviour
 
     public void PlayNextVoiceCue()
     {
-        this.currVoiceCue++;
-        GameManager.Instance.audioManager.PlayVoiceCue(() =>
+        if (currVoiceCue < maxVoiceCues)
         {
-            if (currVoiceCue < maxNumPolypPickups)
+            GameManager.Instance.audioManager.PlayVoiceCue(() =>
             {
-                var spawner = GameManager.Instance.polypSpawner;
-                var pickup = spawner.GetPickup();
-                spawner.PositionPickup(pickup, this);
-            }
-            else if (currVoiceCue == maxNumPolypPickups)
-            {
-                var placement = GameManager.Instance.GetPlaceSpot(this);
-                if (placement.IsNone())
-                    placement.SetReady();
-            }
-            EventManager.Game.onPolypVoiceCueComplete?.Invoke(this);
-        });
+                if ((GetWaypointIndex() == 0 && currVoiceCue == maxVoiceCues - 1) ||
+                    GetWaypointIndex() > 0 && currVoiceCue == maxVoiceCues)
+                {
+                    var placement = GameManager.Instance.GetPlaceSpot(this);
+                    if (placement.IsNone())
+                        placement.SetReady();
+                }
+                else
+                {
+                    var spawner = GameManager.Instance.polypSpawner;
+                    var pickup = spawner.GetPickup();
+                    spawner.PositionPickup(pickup, this);
+                    EventManager.Game.onPolypVoiceCueComplete?.Invoke(this);
+
+                }
+            });
+            currVoiceCue++;
+        }
+        // else
+        // {
+        //     var placement = GameManager.Instance.GetPlaceSpot(this);
+        //     if (placement.IsNone())
+        //         placement.SetReady();
+        // }
     }
 
     public void OnUpdate()
