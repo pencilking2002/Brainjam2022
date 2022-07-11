@@ -6278,13 +6278,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 1844559436}
     m_Modifications:
     - target: {fileID: 860051611820107812, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 860051611820107812, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 860051611820107812, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
       propertyPath: m_Volume
-      value: 0.603
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 860051611820107812, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680378664036034752, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: Priority
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5680378664036034752, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
       propertyPath: m_Volume
       value: 0.755
       objectReference: {fileID: 0}
+    - target: {fileID: 5680378664036034752, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46b3158cb3350684d9855c74733695db, type: 3}
     - target: {fileID: 5680378665597298731, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
       propertyPath: m_RootOrder
       value: 1
