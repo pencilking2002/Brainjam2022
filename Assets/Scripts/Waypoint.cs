@@ -27,23 +27,47 @@ public class Waypoint : MonoBehaviour
 
 
     [Header("Settings")]
-    [SerializeField] private int index;
+    //[SerializeField] private int index;
     public int maxNumPolypPickups = 3;
     public int numPolypsPickedUp;
     [SerializeField] private FillState fillState;
     [SerializeField] private float fillSpeed = 0.05f;
     [SerializeField] private Vector2 minMaxCylinderScaleY;
     private Material cylinderMat;
-    public int currVoiceCue;
+    public int currVoiceCue = -1;
 
     private void Awake()
     {
+        currVoiceCue = -1;
         cylinderMat = cylinderRend.material;
         if (IsNone())
         {
             Debug.Log("set none");
             SetNone();
         }
+    }
+
+    private void WaypointFilled()
+    {
+        var player = GameManager.Instance.vrController;
+
+        // Hide the current waypoint the player is on
+        if (player.currWaypoint && player.currWaypoint != this)
+            player.currWaypoint.SetNone();
+
+        // The first waypoint is special and starts a 
+        // voice key when the player teleports to it
+        if (this.GetWaypointIndex() == 0)
+            PlayNextVoiceCue();
+    }
+
+    public void PlayNextVoiceCue()
+    {
+        this.currVoiceCue++;
+        GameManager.Instance.audioManager.PlayVoiceCue(() =>
+        {
+            EventManager.Game.onPolypVoiceCueComplete?.Invoke(this);
+        });
     }
 
     public void OnUpdate()
@@ -71,9 +95,9 @@ public class Waypoint : MonoBehaviour
         return nextWaypoint;
     }
 
-    public int GetWaypintIndex()
+    public int GetWaypointIndex()
     {
-        return index;
+        return transform.GetSiblingIndex();
     }
 
     private void IncreaseFill()

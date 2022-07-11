@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-    //[SerializeField] private WaypointTree[] waypointTree;
-    //[SerializeField] private int currTreeIndex = -1;
     [SerializeField] private Waypoint[] waypoints;
     [SerializeField] private Waypoint currWaypoint;
     [SerializeField] private bool hasCurrWaypoint;
@@ -19,7 +17,6 @@ public class WaypointManager : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.waypointManager = this;
-        //RevealNext();
     }
 
     private void Update()
@@ -34,19 +31,13 @@ public class WaypointManager : MonoBehaviour
     {
         LeanTween.delayedCall(gameObject, delay, () =>
         {
-            //currTreeIndex++;
             var prevWaypoint = GameManager.Instance.vrController.currWaypoint;
             bool isFirstWaypoint = prevWaypoint == null;
 
-            //if (currTreeIndex < waypoints.Length)
             if (isFirstWaypoint || prevWaypoint.HasNextWaypoint())
             {
                 var nextWaypoint = isFirstWaypoint ? waypoints[0] : prevWaypoint.GetNextWaypoint();
                 nextWaypoint.SetIdle();
-                // var waypoints = waypointTree[currTreeIndex].waypoints;
-
-                // foreach (Waypoint waypoint in waypoints)
-                //     waypoint.SetIdle();
 
                 EventManager.Player.onWaypointsRevealed?.Invoke(waypoints);
                 Debug.Log("Reveal waypoint");
@@ -63,14 +54,9 @@ public class WaypointManager : MonoBehaviour
 
     public void SetCurrWaypoint(Waypoint waypoint)
     {
-        //Debug.Log(waypoint);
-        //if (waypoint == null)
-        //GameManager.Instance.audioManager.PlayVoiceCue();
-
         currWaypoint = waypoint;
         hasCurrWaypoint = currWaypoint != null;
     }
-
 
     private void OnTriggerNextWaypointSequence()
     {
@@ -86,10 +72,4 @@ public class WaypointManager : MonoBehaviour
     {
         EventManager.Game.onTriggerNextWaypointSequence -= OnTriggerNextWaypointSequence;
     }
-}
-
-[Serializable]
-public class WaypointTree
-{
-    public Waypoint[] waypoints;
 }

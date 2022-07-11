@@ -70,7 +70,7 @@ public class PolypPlaceSpot : MonoBehaviour
     }
     private void OnPolypVoiceCueComplete(Waypoint waypoint)
     {
-        if (this.waypoint.GetWaypintIndex() == 0)
+        if (this.waypoint.GetWaypointIndex() == 0)
         {
             if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups - 2)
             {

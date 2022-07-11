@@ -41,7 +41,6 @@ public class VRController : MonoBehaviour
                 controllerFound = true;
                 return audioController;
             }
-
         }
         return null;
     }
@@ -56,20 +55,23 @@ public class VRController : MonoBehaviour
 
     private void OnWaypointFilled(Waypoint waypoint)
     {
+        // Move player to the wayoint
         SetPlayerPosition(waypoint.transform);
 
-        if (currWaypoint && currWaypoint != waypoint)
-            currWaypoint.SetNone();
-
+        // Set this as the player's current waypoint
         currWaypoint = waypoint;
-        if (currWaypoint.GetWaypintIndex() == 0)
-        {
-            GameManager.Instance.audioManager.PlayVoiceCue(() =>
-            {
-                EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
-            });
-        }
 
+        // if (currWaypoint && currWaypoint != waypoint)
+        //     currWaypoint.SetNone();
+
+        // currWaypoint = waypoint;
+        // if (currWaypoint.GetWaypintIndex() == 0)
+        // {
+        //     GameManager.Instance.audioManager.PlayVoiceCue(() =>
+        //     {
+        //         EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
+        //     });
+        // }
     }
 
     private void OnPickupPolyp(PolypPickup pickup)

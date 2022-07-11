@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            var index = currWaypoint.GetWaypintIndex();
+            var index = currWaypoint.GetWaypointIndex();
 
             if (index == 0)
                 clip = audioData.waypointVoiceCues_01[currWaypoint.currVoiceCue];
@@ -69,7 +69,6 @@ public class AudioManager : MonoBehaviour
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>
             {
-                currWaypoint.currVoiceCue++;
                 if (onComplete != null)
                     onComplete();
             });

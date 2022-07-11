@@ -59,7 +59,7 @@ public class PolypSpawner : MonoBehaviour
 
     private void OnWaypointFilled(Waypoint waypoint)
     {
-        if (waypoint.GetWaypintIndex() != 0)
+        if (waypoint.GetWaypointIndex() != 0)
         {
             var pickup = GetPickup();
             PositionPickup(pickup, waypoint);
@@ -68,7 +68,7 @@ public class PolypSpawner : MonoBehaviour
 
     private void OnPolypVoiceCueComplete(Waypoint waypoint)
     {
-        if (waypoint.GetWaypintIndex() == 0)
+        if (waypoint.GetWaypointIndex() == 0)
         {
             if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups - 1)
             {
