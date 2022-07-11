@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class VRController : MonoBehaviour
 {
+    public Camera cam;
     [SerializeField] private Canvas canvas;
     [SerializeField] private XROrigin origin;
     [SerializeField] private LookRaycaster raycaster;
@@ -62,10 +63,12 @@ public class VRController : MonoBehaviour
 
         currWaypoint = waypoint;
         if (currWaypoint.GetWaypintIndex() == 0)
+        {
             GameManager.Instance.audioManager.PlayVoiceCue(() =>
             {
                 EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
             });
+        }
 
     }
 
@@ -77,7 +80,7 @@ public class VRController : MonoBehaviour
             {
                 currWaypoint.numPolypsPickedUp++;
 
-                if (currWaypoint.numPolypsPickedUp >= currWaypoint.maxNumPolypPickups)
+                if (currWaypoint.numPolypsPickedUp == currWaypoint.maxNumPolypPickups)
                 {
                     //Debug.Log("Picked up all polyps for waypoint");
                     EventManager.Player.onCompletePolypPickupForWaypoint?.Invoke(currWaypoint);

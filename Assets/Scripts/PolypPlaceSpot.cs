@@ -24,14 +24,6 @@ public class PolypPlaceSpot : MonoBehaviour
         mat = rend.material;
     }
 
-    private void OnCompletePolypPickupForWaypoint(Waypoint waypoint)
-    {
-        if (this.waypoint == waypoint)
-        {
-            if (IsNone())
-                SetReady();
-        }
-    }
 
     public void SetNone() { placeState = PlaceState.NONE; }
     public void SetReady()
@@ -76,14 +68,37 @@ public class PolypPlaceSpot : MonoBehaviour
             Gizmos.DrawLine(transform.position, waypoint.transform.position);
         }
     }
+    private void OnPolypVoiceCueComplete(Waypoint waypoint)
+    {
+        if (this.waypoint.GetWaypintIndex() == 0)
+        {
+            if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups - 2)
+            {
+                Debug.Log("complete voice cue. curr cue num:" + waypoint.numPolypsPickedUp + ". max: " + waypoint.maxNumPolypPickups);
+
+                if (IsNone())
+                    SetReady();
+            }
+        }
+        else
+        {
+            if (this.waypoint == waypoint && waypoint.numPolypsPickedUp == waypoint.maxNumPolypPickups)
+            {
+                Debug.Log("complete voice cue. curr cue num:" + waypoint.numPolypsPickedUp + ". max: " + waypoint.maxNumPolypPickups);
+
+                if (IsNone())
+                    SetReady();
+            }
+        }
+    }
 
     private void OnEnable()
     {
-        EventManager.Player.onCompletePolypPickupForWaypoint += OnCompletePolypPickupForWaypoint;
+        EventManager.Game.onPolypVoiceCueComplete += OnPolypVoiceCueComplete;
     }
 
     private void OnDisable()
     {
-        EventManager.Player.onCompletePolypPickupForWaypoint -= OnCompletePolypPickupForWaypoint;
+        EventManager.Game.onPolypVoiceCueComplete -= OnPolypVoiceCueComplete;
     }
 }

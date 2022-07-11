@@ -53,7 +53,8 @@ public class PolypSpawner : MonoBehaviour
         // pickup.transform.position = waypoint.transform.position + (Vector3.up) + randomVector;
         var player = GameManager.Instance.vrController;
         var spot = GameManager.Instance.GetPlaceSpot(waypoint);
-        pickup.transform.position = spot.transform.position + (Vector3.up * 0.5f) - (player.transform.forward * 0.5f);
+        var playerDirection = (player.cam.transform.position - spot.transform.position).normalized;
+        pickup.transform.position = spot.transform.position + (Vector3.up * 0.5f) + (playerDirection * 0.5f);
     }
 
     private void OnWaypointFilled(Waypoint waypoint)
@@ -67,8 +68,22 @@ public class PolypSpawner : MonoBehaviour
 
     private void OnPolypVoiceCueComplete(Waypoint waypoint)
     {
-        var pickup = GetPickup();
-        PositionPickup(pickup, waypoint);
+        if (waypoint.GetWaypintIndex() == 0)
+        {
+            if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups - 1)
+            {
+                var pickup = GetPickup();
+                PositionPickup(pickup, waypoint);
+            }
+        }
+        else
+        {
+            if (waypoint.currVoiceCue < waypoint.maxNumPolypPickups - 1)
+            {
+                var pickup = GetPickup();
+                PositionPickup(pickup, waypoint);
+            }
+        }
     }
 
     private void OnEnable()

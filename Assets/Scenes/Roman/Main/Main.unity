@@ -5666,6 +5666,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1876341107 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1561179154209045043, guid: ad45f05259d092046b9826ec6bc3dbdb, type: 3}
+  m_PrefabInstance: {fileID: 1561179154592225088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1936558441 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3969691123574595334, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
@@ -6270,6 +6275,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1561179152809962758, guid: ad45f05259d092046b9826ec6bc3dbdb, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1876341107}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad45f05259d092046b9826ec6bc3dbdb, type: 3}
 --- !u!1001 &2041259598538322494
@@ -6467,7 +6476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6681555814616937195, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: maxNumPolypPickups
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8508143459828020549, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: m_LocalPosition.x

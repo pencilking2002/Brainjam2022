@@ -40,11 +40,12 @@ public class PolypPickup : MonoBehaviour
         GameManager.Instance.polypSpawner.InsertPickup(this);
 
         var currWaypoint = GameManager.Instance.vrController.currWaypoint;
-        if (currWaypoint.numPolypsPickedUp < currWaypoint.maxNumPolypPickups - 1)
+        if (currWaypoint.numPolypsPickedUp <= currWaypoint.maxNumPolypPickups)
         {
             GameManager.Instance.audioManager.PlayVoiceCue(() =>
             {
                 EventManager.Game.onPolypVoiceCueComplete?.Invoke(currWaypoint);
+                Debug.Log($"voice cur complete: curr num:{currWaypoint.numPolypsPickedUp} max:{currWaypoint.maxNumPolypPickups}");
             });
         }
         EventManager.Player.onPickupPolyp?.Invoke(this);
