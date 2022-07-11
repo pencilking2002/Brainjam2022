@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6738466379097241788}
   - component: {fileID: 860051611820107812}
   m_Layer: 0
-  m_Name: MusicAudioSource_02
+  m_Name: SfxAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,11 +42,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ad5fd1dc9282942ddb2b10dfacc3ac8c, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudioSource_01: {fileID: 5680378664036034752}
-  musicAudioSource_02: {fileID: 860051611820107812}
+  sfxAudioSource: {fileID: 860051611820107812}
   voiceAudioSource: {fileID: 5680378665409158795}
   audioData: {fileID: 11400000, guid: 0c1d214541f92cc4aacc400413435ab7, type: 2}
 --- !u!1 &5680378664036034754
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 5680378664036034753}
   - component: {fileID: 5680378664036034752}
   m_Layer: 0
-  m_Name: MusicAudioSource_01
+  m_Name: MusicAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

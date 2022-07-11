@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 public class AudioData : ScriptableObject
 {
     public AudioClip track;
+    public AudioClip simulation;
     public AudioClip teleportBuildup;
     public AudioClip teleport;
     public AudioClip[] pickupClips;

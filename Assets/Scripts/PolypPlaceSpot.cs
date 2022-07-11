@@ -51,10 +51,10 @@ public class PolypPlaceSpot : MonoBehaviour
         placeState = PlaceState.COMPLETE;
     }
 
-    public void Activate()
-    {
-        growthController.Grow();
-    }
+    // public void Activate()
+    // {
+    //     growthController.Grow();
+    // }
 
     public bool IsNone() { return placeState == PlaceState.NONE; }
     public bool IsReady() { return placeState == PlaceState.READY; }

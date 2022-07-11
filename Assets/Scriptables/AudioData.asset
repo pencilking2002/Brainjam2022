@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AudioData
   m_EditorClassIdentifier: 
   track: {fileID: 8300000, guid: 46b3158cb3350684d9855c74733695db, type: 3}
+  simulation: {fileID: 8300000, guid: b748ed7a651de0745b204573ae0863d7, type: 3}
   teleportBuildup: {fileID: 8300000, guid: 99da81371dc99b2408071308d3ec3bdf, type: 3}
   teleport: {fileID: 8300000, guid: e372675141137cf43a4d74c9f14c29e7, type: 3}
   pickupClips:

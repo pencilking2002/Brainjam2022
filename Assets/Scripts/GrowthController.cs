@@ -45,5 +45,6 @@ public class GrowthController : MonoBehaviour
                mats[i].SetFloat(Util.grow, val);
            }
        });
+        GameManager.Instance.audioManager.PlaySimulationSound();
     }
 }

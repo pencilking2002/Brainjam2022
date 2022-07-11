@@ -6,13 +6,14 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource musicAudioSource_01;
-    [SerializeField] private AudioSource musicAudioSource_02;
+    [SerializeField] private AudioSource sfxAudioSource;
     [SerializeField] private AudioSource voiceAudioSource;
     [SerializeField] private AudioData audioData;
     //[SerializeField] private int currVoiceCue;
 
     private void Awake()
     {
+        sfxAudioSource.mute = false;
         //PlayMusic();
     }
 
@@ -31,6 +32,7 @@ public class AudioManager : MonoBehaviour
     {
         var clip = GetRandomPickupClip();
         PlayOneShotSound(source, clip);
+        Debug.Log("pickup sound");
     }
 
     public void PlayPickupComplete(AudioSource audioSource)
@@ -40,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoiceCue(Action onComplete = null)
     {
-        
+
         var currWaypoint = GameManager.Instance.vrController.currWaypoint;
 
         AudioClip clip = null;
@@ -50,7 +52,7 @@ public class AudioManager : MonoBehaviour
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>
             {
-                
+
                 if (onComplete != null)
                     onComplete();
             });
@@ -93,6 +95,11 @@ public class AudioManager : MonoBehaviour
     public void Teleport()
     {
         PlayOneShotSound(voiceAudioSource, audioData.teleport);
+    }
+
+    public void PlaySimulationSound()
+    {
+        PlayOneShotSound(sfxAudioSource, audioData.simulation);
     }
 
     private AudioClip GetRandomPickupClip()

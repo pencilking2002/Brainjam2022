@@ -24,14 +24,16 @@ public class HandAudioController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay()
+    private void OnTriggerStay(Collider other)
     {
-        isColliding = true;
+        if (other.gameObject.layer == Util.polypColliderLayer)
+            isColliding = true;
     }
 
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
-        isColliding = false;
+        if (other.gameObject.layer == Util.polypColliderLayer)
+            isColliding = false;
     }
 
     public void PlayRandomPickupSound()
