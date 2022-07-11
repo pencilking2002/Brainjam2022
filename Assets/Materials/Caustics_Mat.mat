@@ -64,6 +64,6 @@ Material:
     - __dirty: 0
     - _colorShiftSpeed: 0.1
     m_Colors:
-    - _Color: {r: 0.18522191, g: 0.3962264, b: 0.1738163, a: 1}
+    - _Color: {r: 0.29859382, g: 0.5188679, b: 0.28635636, a: 1}
     - _Color1: {r: 0.7216981, g: 0.98942834, b: 1, a: 1}
   m_BuildTextureStacks: []

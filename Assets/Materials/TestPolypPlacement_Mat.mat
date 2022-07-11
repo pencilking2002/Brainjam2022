@@ -37,7 +37,7 @@ Material:
     - _Cutoff: 0.5
     - _GlowSpeed: 5
     - _GlowStrenght: 0
-    - _GlowStrength: 0
+    - _GlowStrength: 1
     - __dirty: 0
     m_Colors:
     - _Color: {r: 0, g: 0.34509793, b: 0.7450981, a: 1}

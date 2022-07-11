@@ -22,6 +22,7 @@ public class PolypPlaceSpot : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         mat = rend.material;
+        mat.SetFloat(Util.glowStrength, 0);
     }
 
 
