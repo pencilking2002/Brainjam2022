@@ -31,7 +31,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cutoff: 0.65
-    - _Grow: 0
+    - _Grow: 1
     - _NumScanlines: 0.005
     - _PushPull: -0.3
     - __dirty: 0

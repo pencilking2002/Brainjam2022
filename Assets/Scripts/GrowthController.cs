@@ -20,6 +20,7 @@ public class GrowthController : MonoBehaviour
         for (int i = 0; i < rends.Length; i++)
         {
             mats[i] = rends[i].material;
+            mats[i].SetFloat(Util.grow, 0);
         }
     }
 
@@ -29,7 +30,7 @@ public class GrowthController : MonoBehaviour
         {
             for (int i = 0; i < rends.Length; i++)
             {
-                mats[i].SetFloat("_Grow", val);
+                mats[i].SetFloat(Util.grow, val);
             }
         })
         .setRepeat(-1);
@@ -41,7 +42,7 @@ public class GrowthController : MonoBehaviour
        {
            for (int i = 0; i < rends.Length; i++)
            {
-               mats[i].SetFloat("_Grow", val);
+               mats[i].SetFloat(Util.grow, val);
            }
        });
     }
