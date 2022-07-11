@@ -6352,7 +6352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: maxVoiceCues
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2667893686258787473, guid: 4231083dbaef37b43af94856eed9b33e, type: 3}
       propertyPath: maxNumPolypPickups
