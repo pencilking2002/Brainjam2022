@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: BrainJamBuiltin_2022
+  companyName: Team2
+  productName: DeepCoralation
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -147,6 +147,11 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: e912deabe1acedb408cb0dd3146a9d92, type: 2}
+  - {fileID: 1425594111022552898, guid: 12ccec6759299ff4dae7d806f38e0fb6, type: 2}
+  - {fileID: -3552667870476145610, guid: f54a93cfb5118e64298e7ad148b1aba7, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
