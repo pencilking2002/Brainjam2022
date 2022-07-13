@@ -87,6 +87,16 @@ public class AudioManager : MonoBehaviour
         PlayOneShotSound(voiceAudioSource, audioData.teleportBuildup, true);
     }
 
+    public float GetSimulationSoundLength()
+    {
+        return audioData.simulationVoiceCue.length;
+    }
+
+    public void PlaySimulationVoiceCue()
+    {
+        PlayOneShotSound(voiceAudioSource, audioData.simulationVoiceCue);
+    }
+
     public void StopBuildup()
     {
         // voiceAudioSource.loop = false;

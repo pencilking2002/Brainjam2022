@@ -24,7 +24,19 @@ public class GrowthController : MonoBehaviour
         }
     }
 
-    private void StartGrowthTest()
+    // private void StartGrowthTest()
+    // {
+    //     LeanTween.value(gameObject, 0, 1, 2.0f).setOnUpdate((float val) =>
+    //     {
+    //         for (int i = 0; i < rends.Length; i++)
+    //         {
+    //             mats[i].SetFloat(Util.grow, val);
+    //         }
+    //     })
+    //     .setRepeat(-1);
+    // }
+
+    public void Grow()
     {
         LeanTween.value(gameObject, 0, 1, 2.0f).setOnUpdate((float val) =>
         {
@@ -32,19 +44,7 @@ public class GrowthController : MonoBehaviour
             {
                 mats[i].SetFloat(Util.grow, val);
             }
-        })
-        .setRepeat(-1);
-    }
-
-    public void Grow()
-    {
-        LeanTween.value(gameObject, 0, 1, 2.0f).setOnUpdate((float val) =>
-       {
-           for (int i = 0; i < rends.Length; i++)
-           {
-               mats[i].SetFloat(Util.grow, val);
-           }
-       });
+        });
         GameManager.Instance.audioManager.PlaySimulationSound();
     }
 }

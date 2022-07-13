@@ -15,6 +15,7 @@ public class AudioData : ScriptableObject
     public AudioClip[] voiceCues;
 
     public AudioClip introVoiceCue;
+    public AudioClip simulationVoiceCue;
     public AudioClip[] waypointVoiceCues_01;
     public AudioClip[] waypointVoiceCues_02;
     public AudioClip[] waypointVoiceCues_03;

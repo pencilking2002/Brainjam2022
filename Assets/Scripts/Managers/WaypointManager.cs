@@ -60,7 +60,21 @@ public class WaypointManager : MonoBehaviour
 
     private void OnTriggerNextWaypointSequence()
     {
-        RevealNext(1);
+        var waypoint = GameManager.Instance.vrController.currWaypoint;
+        if (waypoint && waypoint.GetWaypointIndex() == 0)
+        {
+            var length = GameManager.Instance.audioManager.GetSimulationSoundLength();
+            GameManager.Instance.audioManager.PlaySimulationVoiceCue();
+            LeanTween.delayedCall(gameObject, length, () =>
+            {
+                RevealNext(1);
+            });
+        }
+        else
+        {
+            RevealNext(1);
+        }
+        //Debug.Log("Trigger next waypoint");
     }
 
     private void OnEnable()

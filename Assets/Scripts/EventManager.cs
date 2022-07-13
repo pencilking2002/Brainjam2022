@@ -16,7 +16,7 @@ public class EventManager : MonoBehaviour
 
     public class Game
     {
-        public static Action onBeginWaypointSequence;
+        //public static Action onBeginWaypointSequence;
         public static Action onTriggerNextWaypointSequence;
         public static Action<Waypoint> onPolypVoiceCueComplete;
     }
