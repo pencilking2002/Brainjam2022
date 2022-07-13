@@ -32,6 +32,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3067388d2117996499a3a361516aae7f, type: 3}
   - {fileID: 8300000, guid: 08fb1cacc32734540a503ad3d8105584, type: 3}
   introVoiceCue: {fileID: 8300000, guid: e00c0f2adefa744ec8b61edf8528e808, type: 3}
+  simulationVoiceCue: {fileID: 8300000, guid: af0d8a828e99e4e49ae4c77cb170c39a, type: 3}
   waypointVoiceCues_01:
   - {fileID: 8300000, guid: 8d90d08afab6d414d95d8103ffba3c4a, type: 3}
   - {fileID: 8300000, guid: 25ff5fc808a0444b4ac35b9c3eaa2a46, type: 3}

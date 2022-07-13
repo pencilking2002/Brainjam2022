@@ -31,10 +31,15 @@ public class WaypointManager : MonoBehaviour
     {
         LeanTween.delayedCall(gameObject, delay, () =>
         {
-            var prevWaypoint = GameManager.Instance.vrController.currWaypoint;
+            var player = GameManager.Instance.vrController;
+            var prevWaypoint = player.currWaypoint;
             bool isFirstWaypoint = prevWaypoint == null;
 
-            if (isFirstWaypoint || prevWaypoint.HasNextWaypoint())
+            if (prevWaypoint && prevWaypoint.IsLastWaypoint())
+            {
+                player.transition.FadeToBlack();
+            }
+            else if (isFirstWaypoint || prevWaypoint.HasNextWaypoint())
             {
                 var nextWaypoint = isFirstWaypoint ? waypoints[0] : prevWaypoint.GetNextWaypoint();
                 nextWaypoint.SetIdle();

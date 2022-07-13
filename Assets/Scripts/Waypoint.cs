@@ -132,6 +132,11 @@ public class Waypoint : MonoBehaviour
         return nextWaypoint;
     }
 
+    public bool IsLastWaypoint()
+    {
+        return nextWaypoint == null;
+    }
+
     public int GetWaypointIndex()
     {
         Debug.Log("siblign index: " + transform.GetSiblingIndex());

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        InitInstance();
+        Instance = this;
         placeSpots = GameObject.FindObjectsOfType<PolypPlaceSpot>();
     }
 
@@ -42,11 +42,11 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    private void InitInstance()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Instance = null;
-    }
+    // private void InitInstance()
+    // {
+    //     if (Instance == null)
+    //         Instance = this;
+    //     else
+    //         Instance = null;
+    // }
 }

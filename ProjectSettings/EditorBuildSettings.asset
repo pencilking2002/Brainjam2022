@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Roman/Main/Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Roman/End/EndScene.unity
+    guid: cff2646d011b7dc45a7aab579fba0f64
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e912deabe1acedb408cb0dd3146a9d92, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 12ccec6759299ff4dae7d806f38e0fb6, type: 2}

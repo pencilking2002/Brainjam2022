@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class VRController : MonoBehaviour
 {
     public Camera cam;
+    public TransitionSphere transition;
     [SerializeField] private Canvas canvas;
     [SerializeField] private XROrigin origin;
     [SerializeField] private LookRaycaster raycaster;
