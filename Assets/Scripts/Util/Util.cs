@@ -11,7 +11,7 @@ public class Util : MonoBehaviour
     public static string glowStrength = "_GlowStrength";
     public static string grow = "_Grow";
     public static string alpha = "_Alpha";
-
+    public static string foregroundVolume = "ForegroundVolume";
 }
 
 public static class ExtensionMethods

@@ -6102,6 +6102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7137969781642807879, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6279191450698944008, guid: 6a743fadb81bb4a429782679177cfca2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c95c6c9632b86049ace6b0c5143e42e, type: 3}
 --- !u!1001 &6681555813904629106

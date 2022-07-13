@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxAudioSource;
     [SerializeField] private AudioSource voiceAudioSource;
     [SerializeField] private AudioData audioData;
+    [SerializeField] private AudioMixer mixer;
+
     //[SerializeField] private int currVoiceCue;
 
     private void Awake()
@@ -44,6 +47,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoiceCue(Action onComplete = null)
     {
+        //var volume = 20.0f * Mathf.Log10(0);
+        mixer.SetFloat(Util.foregroundVolume, -80.0f);
 
         var currWaypoint = GameManager.Instance.vrController.currWaypoint;
 
@@ -54,7 +59,7 @@ public class AudioManager : MonoBehaviour
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>
             {
-
+                mixer.SetFloat(Util.foregroundVolume, 0.0f);
                 if (onComplete != null)
                     onComplete();
             });
@@ -77,6 +82,7 @@ public class AudioManager : MonoBehaviour
             PlayOneShotSound(voiceAudioSource, clip);
             LeanTween.delayedCall(clip.length, () =>
             {
+                mixer.SetFloat(Util.foregroundVolume, 0.0f);
                 if (onComplete != null)
                     onComplete();
             });
@@ -95,7 +101,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySimulationVoiceCue()
     {
+        mixer.SetFloat(Util.foregroundVolume, -80.0f);
         PlayOneShotSound(voiceAudioSource, audioData.simulationVoiceCue);
+
+        var clipLength = audioData.simulationVoiceCue.length;
+        LeanTween.delayedCall(gameObject, clipLength, () =>
+        {
+            mixer.SetFloat(Util.foregroundVolume, 0.0f);
+        });
     }
 
     public void StopBuildup()

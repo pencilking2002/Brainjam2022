@@ -457,6 +457,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 860051611820107812}
   voiceAudioSource: {fileID: 5680378665409158795}
   audioData: {fileID: 11400000, guid: 0c1d214541f92cc4aacc400413435ab7, type: 2}
+  mixer: {fileID: 24100000, guid: 6a743fadb81bb4a429782679177cfca2, type: 2}
 --- !u!1 &5680378664036034754
 GameObject:
   m_ObjectHideFlags: 0
