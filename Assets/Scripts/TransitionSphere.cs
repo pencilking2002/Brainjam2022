@@ -14,25 +14,29 @@ public class TransitionSphere : MonoBehaviour
         mat = rend.material;
     }
 
-    public void FadeToBlack()
+    public void FadeToBlack(float delay)
     {
-        rend.enabled = true;
-        LeanTween.value(gameObject, 0, 1, 2).setOnUpdate((float val) =>
+        LeanTween.delayedCall(gameObject, delay, () =>
         {
-            mat.SetFloat(Util.alpha, val);
-        })
-        .setOnComplete(() =>
-        {
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
-            LeanTween.delayedCall(1, () =>
+            rend.enabled = true;
+            LeanTween.value(gameObject, 0, 1, 2).setOnUpdate((float val) =>
             {
-                LeanTween.value(gameObject, 1, 0, 0.5f).setOnUpdate((float val) =>
+                mat.SetFloat(Util.alpha, val);
+            })
+            .setOnComplete(() =>
+            {
+                Camera.main.backgroundColor = Color.black;
+                SceneManager.LoadScene(1, LoadSceneMode.Single);
+                LeanTween.delayedCall(1, () =>
                 {
-                    mat.SetFloat(Util.alpha, val);
-                })
-                .setOnComplete(() =>
-                {
-                    rend.enabled = false;
+                    LeanTween.value(gameObject, 1, 0, 0.5f).setOnUpdate((float val) =>
+                    {
+                        mat.SetFloat(Util.alpha, val);
+                    })
+                    .setOnComplete(() =>
+                    {
+                        rend.enabled = false;
+                    });
                 });
             });
         });

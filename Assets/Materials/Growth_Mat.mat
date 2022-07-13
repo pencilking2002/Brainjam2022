@@ -36,5 +36,5 @@ Material:
     - _PushPull: -0.3
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 2.0204918, g: 1.3645546, b: 0.4866106, a: 1}
+    - _Color: {r: 1.0942751, g: 0.20764987, b: 0.108395174, a: 1}
   m_BuildTextureStacks: []

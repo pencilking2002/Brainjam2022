@@ -37,7 +37,7 @@ public class WaypointManager : MonoBehaviour
 
             if (prevWaypoint && prevWaypoint.IsLastWaypoint())
             {
-                player.transition.FadeToBlack();
+                player.transition.FadeToBlack(2);
             }
             else if (isFirstWaypoint || prevWaypoint.HasNextWaypoint())
             {
