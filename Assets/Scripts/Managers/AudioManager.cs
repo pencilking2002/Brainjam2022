@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource musicAudioSource_01;
+    [SerializeField] private AudioSource backgroundMusicAudioSource;
+    [SerializeField] private AudioSource ForegroundMusicAudioSource;
     [SerializeField] private AudioSource sfxAudioSource;
     [SerializeField] private AudioSource voiceAudioSource;
     [SerializeField] private AudioData audioData;
